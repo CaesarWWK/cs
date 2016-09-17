@@ -9,8 +9,8 @@ public class Rectangle2D{
         points=new double[5][2];
         double xmin=input[0][0];
         double xmax=input[0][0];
-        double ymin=input[0][0];
-        double ymax=input[0][0];
+        double ymin=input[0][1];
+        double ymax=input[0][1];
         for(int n=0;n<5;n++){
          for(int i=0;i<2;i++){
           points[n][i]=input[n][i];
@@ -34,7 +34,7 @@ public class Rectangle2D{
       }
 
        xmid=(xmax-xmin)/2+xmin;
-       ymid=(ymax+ymin)/2+ymin;
+       ymid=(ymax-ymin)/2+ymin;
        width=xmax-xmin;
        height=ymax-ymin;//calculate the midpoint, width and height.
 
