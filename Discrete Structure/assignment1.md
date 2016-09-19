@@ -12,22 +12,38 @@
   4.A or B or C
 
  (b)
-  1.If A is true, B is lying, so C is telling the truth. So what C say is true, which means A is true and C is true. If A said that maybe
-  C is lying, so that A and C are lying, that wont be true.    So A is true  B is lying C is true.
+(1)  A  B  C   ~B or ~C   ~C   A and C
+     1  1  1       0       0      1
+     1  1  0       1       1      0
+     1  0  1       1       0      1
+     1  0  0       1       1      0
+     So A is true, B is false and C is true. Or A is true, B is true and C is false.
 
-    If A is lying, B and C are telling the truth, C is telling the truth, but we can find that A is lying, so this presume is not true.
+(2)   A B   ~A->~B  ~B->~A
+      1 1     1       1
+      1 0     1       0  So the answer is that both A and B are
+      0 1     1       1
+      0 0     0       1
+     So the answer is that both A and B are telling truth or A is telling the truth and B is lying.
 
-  2.If B is lying, the same as A. So A should be saying the truth. But if B is lying, A should also be lying, so it cant be B is lying.
 
-    If B is telling the truth, the same as A. So A should be saying the truth. In fact, because B is saying the truth, as well as A, both them are telling the truth . Correct
-
-  3.If B is telling the truth, C and A maybe both lying . If C is telling the truth, B and A should have the same truth value, which means A and B and C can be all telling the truth. Correct. If C is lying, and A is lying, C must be telling the truth. Wrong.
-
-    If B is lying, C lying equal s A telling the truth.If C is lying, A lying equals B telling the truth. So if A telling the truth, B and C are all lying, Correct. If A is lying, C should be telling the truth, false. If C is telling the truth, both A and B are lying. Correct.
+(3)    A  B  C   ~B->~C  ~C->~A  ~A->~B
+       1  1  1     1       1       1
+       1  1  0     1       0       1
+       1  0  1     1       1       1
+       1  0  0     1       1       1
+       0  1  1     1       1       1
+       0  1  0     1       1       0
+       0  0  1     0       1       1      
+       0  0  0     1       1       1
+      So everyone is telling the truth.
 
  3. (a).∼ ((p∨ ∼ q) ∧ r)=(~ (pv ~ q) V r )=(~p ∧ q) V ~r
 
-    (b).
+    (b). ~((p∧q) U r) U (r U s)=false
+     r U s is false. Both r and s is false.
+     (p ∧ q) U r is false.
+     p  ∧  q is false. p and q can be both false, or one true one false
 
 4. （a)
         (1)Yes. Because 6 can be divided into 2*3, if n can be divisible by 6, it must can be divided by 3.
@@ -46,4 +62,4 @@
   5.
     (a)  ~p->q
     (b)  ~(p -> ~q)
-    (c)  
+    (c)  (p->q) ∧ (q->p)= ~((~p->~q) U (~q->~p))
