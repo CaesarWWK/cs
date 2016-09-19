@@ -1,0 +1,635 @@
+脚本启动于 2016年09月18日 星期日 17时05分14秒
+weikuan@bluenose:~/csci2132/assignment1$ mv info ..[D[K/
+mv: "info" 与"./info" 为同一文件
+weikuan@bluenose:~/csci2132/assignment1$ mv info .\
+> 
+mv: "info" 与"./info" 为同一文件
+weikuan@bluenose:~/csci2132/assignment1$ move info ../
+bash: move: 未找到命令
+weikuan@bluenose:~/csci2132/assignment1$ mv info ../
+weikuan@bluenose:~/csci2132/assignment1$ ls
+a1q2.txt  a1q3.txt  a1q4.txt  info2  info3  info4  typescript
+weikuan@bluenose:~/csci2132/assignment1$ cd..
+bash: cd..: 未找到命令
+weikuan@bluenose:~/csci2132/assignment1$ cd ..
+weikuan@bluenose:~/csci2132$ ls
+assignment1  info  lab1  lab1.bk
+weikuan@bluenose:~/csci2132$ cd assgin[D[K[D[K[D[Kignment1
+weikuan@bluenose:~/csci2132/assignment1$ ls
+a1q2.txt  a1q3.txt  a1q4.txt  info2  info3  info4  typescript
+weikuan@bluenose:~/csci2132/assignment1$ find -n 5
+find: 未知的断言“-n”
+weikuan@bluenose:~/csci2132/assignment1$ find[D[K[D[K[D[K[D[Kwhich -n 5
+which: invalid option -- 'n'
+which: no 5 in (/users/cs/weikuan/bin:/local/bin:/bin:/usr/bin:/usr/local/bin:/usr/local/bin:/usr/bin:/local/sbin:/usr/local/sbin:/usr/sbin:/sbin)
+weikuan@bluenose:~/csci2132/assignment1$ which -n<5>
+bash: 未预期的符号 `5' 附近有语法错误
+weikuan@bluenose:~/csci2132/assignment1$ find ./-name"5"
+find: ‘./-name5’: 没有那个文件或目录
+weikuan@bluenose:~/csci2132/assignment1$ find -name"5"
+find: 未知的断言“-name5”
+weikuan@bluenose:~/csci2132/assignment1$ wich[D[K[D[K[D[K[D[Kwhich -n 5
+which: invalid option -- 'n'
+which: no 5 in (/users/cs/weikuan/bin:/local/bin:/bin:/usr/bin:/usr/local/bin:/usr/local/bin:/usr/bin:/local/sbin:/usr/local/sbin:/usr/sbin:/sbin)
+weikuan@bluenose:~/csci2132/assignment1$ wich[D[K[D[Kh[D[K[D[Khich
+Usage: which [options] [--] COMMAND [...]
+Write the full path of COMMAND(s) to standard output.
+
+  --version, -[vV] Print version and exit successfully.
+  --help,          Print this help and exit successfully.
+  --skip-dot       Skip directories in PATH that start with a dot.
+  --skip-tilde     Skip directories in PATH that start with a tilde.
+  --show-dot       Don't expand a dot to current directory in output.
+  --show-tilde     Output a tilde for HOME directory for non-root.
+  --tty-only       Stop processing options on the right if not on tty.
+  --all, -a        Print all matches in PATH, not just the first
+  --read-alias, -i Read list of aliases from stdin.
+  --skip-alias     Ignore option --read-alias; don't read stdin.
+  --read-functions Read shell functions from stdin.
+  --skip-functions Ignore option --read-functions; don't read stdin.
+
+Recommended use is to write the output of (alias; declare -f) to standard
+input, so that which can show aliases and shell functions. See which(1) for
+examples.
+
+If the options --read-alias and/or --read-functions are specified then the
+output can be a full alias or function definition, optionally followed by
+the full path of each command used inside of those.
+
+Report bugs to <which-bugs@gnu.org>.
+weikuan@bluenose:~/csci2132/assignment1$ whc[D[Kich -name 5
+which: invalid option -- 'n'
+which: invalid option -- 'm'
+which: invalid option -- 'e'
+which: no 5 in (/users/cs/weikuan/bin:/local/bin:/bin:/usr/bin:/usr/local/bin:/usr/local/bin:/usr/bin:/local/sbin:/usr/local/sbin:/usr/sbin:/sbin)
+weikuan@bluenose:~/csci2132/assignment1$ which -n[D[K[D[K[D[K[D[K[D[K[D[K[D[K[D[Kfind -name [D[K[D[K[D[K[D[K[D[K[D[K
+.
+./a1q4.txt
+./info4
+./info3
+./typescript
+./info2
+./a1q3.txt
+./a1q2.txt
+weikuan@bluenose:~/csci2132/assignment1$ find --help
+用法: find [-H] [-L] [-P] [-Olevel] [-D help|tree|search|stat|rates|opt|exec] [path...] [expression]
+
+默认路径为当前目录；默认表达式为 -print
+表达式可能由下列成份组成：操作符、选项、测试表达式以及动作：
+
+操作符 (优先级递减；未做任何指定时默认使用 -and):
+      ( EXPR )   ! EXPR   -not EXPR   EXPR1 -a EXPR2   EXPR1 -and EXPR2
+      EXPR1 -o EXPR2   EXPR1 -or EXPR2   EXPR1 , EXPR2
+
+positional options (always true): -daystart -follow -regextype
+
+normal options (always true, specified before other expressions):
+      -depth --help -maxdepth LEVELS -mindepth LEVELS -mount -noleaf
+      --version -xautofs -xdev -ignore_readdir_race -noignore_readdir_race
+
+比较测试 (N 可以是 +N 或 -N 或 N): -amin N -anewer FILE -atime N -cmin N
+      -cnewer 文件 -ctime N -empty -false -fstype 类型 -gid N -group 名称
+      -ilname 匹配模式 -iname 匹配模式 -inum N -ipath 匹配模式 -iregex 匹配模式
+      -links N -lname 匹配模式 -mmin N -mtime N -name 匹配模式 -newer 文件
+      -nouser -nogroup -path 匹配模式 -perm [+-]访问模式 -regex 匹配模式
+      -readable -writable -executable
+      -wholename 匹配模式 -size N[bcwkMG] -true -type [bcdpflsD] -uid N
+      -used N -user 用户名 -xtype [bcdpfls]
+      -context 文本
+
+
+操作: -delete -print0 -printf 格式 -fprintf 文件 格式 -print 
+      -fprint0 文件 -fprint 文件 -ls -fls 文件 -prune -quit
+      -exec 命令 ; -exec 命令 {} + -ok 命令 ;
+      -execdir 命令 ; -execdir 命令 {} + -okdir 命令 ;
+
+通过 findutils 错误报告页 http://savannah.gnu.org/ 报告错误及跟踪修定过程。如果您无法浏览网页，请发电子邮件至 <bug-findutils@gnu.org>。
+weikuan@bluenose:~/csci2132/assignment1$ find [a-z]*[a-z]*[a-z}*[a-z}*[a-z}*.ja
+va
+find: ‘[a-z]*[a-z]*[a-z}*[a-z}*[a-z}*.java’: 没有那个文件或目录
+weikuan@bluenose:~/csci2132/assignment1$ find[D[K[D[K[D[K[D[Kfind [a-z]*[a-z]*[a-z}*[a-z}*[a-z}*.ja
+va[D[A[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[D[D[D[D[D[D[D[D[D[D[D[D[D[D[D[D[D[D[D[D[D[D[D[D[D[D[D[D[D[D[D[D-[a-z]*[a-z]*[a-z}*[a-z}*[a-z}*.j
+ava[A[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C-[a-z]*[a-z]*[a-z}*[a-z}*[a-z}*.
+java[A[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[D[a-z]*[a-z]*[a-z}*[a-z}*[a-z}*.j
+[1Pava[A[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[Cn[a-z]*[a-z]*[a-z}*[a-z}*[a-z}*.
+java[A[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[Ca[a-z]*[a-z]*[a-z}*[a-z}*[a-z}*
+.java[A[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[Cm[a-z]*[a-z]*[a-z}*[a-z}*[a-z}
+*.java[A[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[Ce[a-z]*[a-z]*[a-z}*[a-z}*[a-z
+}*.java[A[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C [a-z]*[a-z]*[a-z}*[a-z}*[a-
+z}*.java[A[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C
+
+weikuan@bluenose:~/csci2132/assignment1$ find -name [a-z]*[a-z]*[a-z}*[a-z}*[a-
+z}*.java ls
+find: 路径必须在表达式之前: ls
+用法: find [-H] [-L] [-P] [-Olevel] [-D help|tree|search|stat|rates|opt|exec] [path...] [expression]
+weikuan@bluenose:~/csci2132/assignment1$ 【[D[D[K「[D[D[K「[D[D[K「ds}[D[K」[D[D[K[D[K[D[K[D[D[K{a-z}[D[K[D[K[D[K[D[K[D[K[a-z]{5}[.java][D[D[D[D[D[D[D[D[D[D[D[D[D[D[Df[a-z]{5}[.java][D[D[D[D[D[D[D[D[D[D[D[D[D[D[Di[a-z]{5}[.java][D[D[D[D[D[D[D[D[D[D[D[D[D[D[Dn[a-z]{5}[.java][D[D[D[D[D[D[D[D[D[D[D[D[D[D[Dd[a-z]{5}[.java][D[D[D[D[D[D[D[D[D[D[D[D[D[D[D [a-z]{5}[.java][D[D[D[D[D[D[D[D[D[D[D[D[D[D[D-[a-z]{5}[.java][D[D[D[D[D[D[D[D[D[D[D[D[D[D[Dr[a-z]{5}[.java][D[D[D[D[D[D[D[D[D[D[D[D[D[D[De[a-z]{5}[.java][D[D[D[D[D[D[D[D[D[D[D[D[D[D[Dg[a-z]{5}[.java][D[D[D[D[D[D[D[D[D[D[D[D[D[D[De[a-z]{5}[.java][D[D[D[D[D[D[D[D[D[D[D[D[D[D[Dx[a-z]{5}[.java][D[D[D[D[D[D[D[D[D[D[D[D[D[D[D [a-z]{5}[.java][D[D[D[D[D[D[D[D[D[D[D[D[D[D[D[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C
+weikuan@bluenose:~/csci2132/assignment1$ ls
+a1q2.txt  a1q3.txt  a1q4.txt  info2  info3  info4  typescript
+weikuan@bluenose:~/csci2132/assignment1$ touch abcde.java
+weikuan@bluenose:~/csci2132/assignment1$ touch abcde.java[D[D[D[D[D[D[D[D[D[D[D[D[D[D[D[Dls[K[D[Dfind -regex [a-z]{5}[.java]
+weikuan@bluenose:~/csci2132/assignment1$ find -regex [a-z]{5}[.java] ls
+find: 路径必须在表达式之前: ls
+用法: find [-H] [-L] [-P] [-Olevel] [-D help|tree|search|stat|rates|opt|exec] [path...] [expression]
+weikuan@bluenose:~/csci2132/assignment1$ find -regex [a-z]{5}[.java] ls[D[D[D[D[D[D[D[D[D[C[C[C[C[C[C[C[C[C[D[K[D[K[D[K“[D[D[D[D[D[D[D[D[D[D[D[D[D[D[D[D”[a-z]{5}[.java]“[D[D[D[D[D[D[D[D[D[D[D[D[D[D[D[D[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C
+weikuan@bluenose:~/csci2132/assignment1$ find path[D[K[D[K[D[K[D[K[D[K[D[K[D[K[D[K[D[Kfind -regex ”[a-z]{5}[.java]“[D[D[D[D[D[D[D[D[D[D[D[D[D[D[D[D[D[D[D[D[D[D[D[D[1@p[1@a[1@r[1@t[D[1P[1@=[D[1P[D[1P[1@t[1@h[1@ [C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C
+find: ‘path’: 没有那个文件或目录
+weikuan@bluenose:~/csci2132/assignment1$ find [D[K .re[D[K[D[K-reget[D[Kx "[a-z][a-z][a-z][a-z][a-z
+]"
+find: ‘.-regex’: 没有那个文件或目录
+find: ‘[a-z][a-z][a-z][a-z][a-z]’: 没有那个文件或目录
+weikuan@bluenose:~/csci2132/assignment1$ find -reg[D[K[D[K[D[K[D[K[D[K[D[K[D[K[D[K[D[Kfind .-regex "[a-z][a-z][a-z][a-z][a-z
+]"[D[A[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[D[D[D[D[D[D[D[D[D[D[D[D[D[D[D[D[D[D[D[D[D[D[D[D[D[D[D[D[D[D[D[D-regex "[a-z][a-z][a-z][a-z][a-z]
+[1P"[A[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[D[D[D[D[D[K
+[K[A[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[Cfind -regex "[a-z][a-z][a-z][a-z][a-z]
+"
+weikuan@bluenose:~/csci2132/assignment1$ find -regex "[a-z][a-z][a-z][a-z][a-z]
+"[A[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[D[D[D[D[D[D[D[D[D[D[D[D[D[D[D[D[D[D[D[D[D[D[D[D.[a-z][a-z][a-z][a-z][a-z
+]"[A[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C/[a-z][a-z][a-z][a-z][a-
+z]"[A[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[D[D[D[D[D[D[D[D[D[D[K
+[K[A[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C-regex "./[a-z][a-z][a-z][a-z][a-
+z]"
+weikuan@bluenose:~/csci2132/assignment1$ f[D[Kls
+a1q2.txt  a1q3.txt  a1q4.txt  abcde.java  info2  info3	info4  typescript
+weikuan@bluenose:~/csci2132/assignment1$ CD[D[K[D[Kcd ..
+weikuan@bluenose:~/csci2132$ cd  ..
+weikuan@bluenose:~$ cd ..
+weikuan@bluenose:/users/cs$ ls
+cd ..
+
+^[  cd weikuanaabawajy       csguest33     huskins	      maves	     sharvie
+aafkari        csguest34     hussam	      mavon	     she
+aalhajri       csguest35     hussey	      max	     sheikh
+aalkasem       csguest36     huszar	      maxp	     sheisler
+aalotaibi      csguest37     hutchings	      mbalenhle      shengbo
+aanthony       csguest38     hutt	      mbian	     shengnan
+abaalkhail     csguest39     huwiler	      mboudreau      sher
+abarbanel      csguest40     hyan	      mburke	     sheroz
+abawajy        csguest41     hyao	      mcai	     sherpa
+abay	       csguest42     hyewon	      mcaliste	     sherwood
+abbasnejad     csguest43     hylee	      mcasey	     shevaun
+abbass	       csguest44     hyliu	      mcaskile	     shi
+abbeyk	       csguest45     hynes	      mcateer	     shichen
+abbeys	       csguest46     hysyang	      mcauley	     shields
+abdou	       csguest47     hyu	      mcavinue	     shin
+abdullah       csguest48     hzhang	      mcconnell      short
+abdulmal       csguest49     hzhao	      mccormick      shu
+aburrows       csguest50     ian	      mccrimmon      shukla
+acasey	       csguest51     ianm	      mccrindl	     shuo
+achen	       csguest52     ianta	      mccullum	     shutong
+aclarke        csguest53     idawson	      mccurdy	     sidek
+acomeau        csguest54     idoucet	      mccutche	     sieffert
+aconnolly      csguest55     idutton	      mcdevitt	     sifton
+acousins       cshea	     iftody	      mcdougall      simmerli
+acrane	       cshelp	     ignacio	      mcfarlan	     simonc
+adavid	       cshi	     ikede	      mcgee	     singhg
+adelle	       csteele	     ilee	      mcinnis	     siwei
+adesida        cstephen      ilow	      mckechnie      sjiang
+adoucette      cstransfers   imartinez	      mckegney	     sjohnson
+adunn	       csu	     imaslov	      mclaughlin     skaalum
+afarrell       ctremblay     imiller	      mclellan	     skyle
+afleming       ctyler	     inches	      mcleod	     slaunwhite
+agallant       cui	     infx1616markera  mcloughlin     slee
+agattous       cuma	     infx1616markerb  mcmaster	     slennie
+agrawal        cunning1      infx1616markerc  mcmillen	     sli
+ahackett       curren	     infx1616markerd  mcminn	     sliang
+aharnett       curtin	     infx1616markere  mcnair	     slopez
+aharris        curtis	     ioanidis	      mcollins	     slutz
+ahealy	       curtism	     iobeng	      mcpherson      smartell
+ahickey        cutcliffe     ipage	      mcrosby	     smeng
+ahmada	       cwest	     irfan	      mcshane	     smith1
+ahmeda	       cwesthaver    iruegas	      mdaaboul	     smith6
+ahmede	       cwhite	     irvine	      mdoucette      smith7
+aholland       cwicks	     irving	      meade	     smith8
+ahunter        cwilliams     irwin	      meaghan	     smorris
+ahurst	       cxiao	     isaacs	      meagher	     smorrison
+aiah	       cyao	     isenor	      medeiros	     smorton
+ajessome       cyue	     ishimwe	      megaffin	     smoss
+akaram	       czhang	     isnor	      meganm	     smyrden
+akash	       czhong	     ivany	      meghan	     smyth
+akbar	       czhou	     jackc	      meghanp	     sn0001
+akenny	       daji	     jacki	      mehta	     sn0002
+aketout        dalapps	     jackson	      meijer	     sn0003
+akin	       dalmeida      jacobm	      melady	     sn0004
+akm	       dalter	     jallen	      melitides      sn0005
+akther	       dames	     jamesg	      mellon	     sn0006
+alahmadi       damours	     jamesl	      men	     sn0007
+alajeeli       dancer	     jamest	      mendleson      sn0008
+alakhali       dane	     janke	      mengl	     sn0009
+alal	       daniela	     janr	      mengling	     sn0010
+alalimi        danielw	     jantzlee	      mengyao	     sn0011
+alam	       danyluk	     jarvis	      mensah	     sn0012
+alammori       darbyshire    javorek	      meshari	     sn0013
+alawami        darlison      jawich	      metzler	     sn0014
+aldosari       darthur	     jayden	      meuse	     sn0015
+alduraie       dass	     jaywin	      mfarrell	     sn0016
+aleblanc       datong	     jblair	      mfisher	     sn0017
+alenizy        davidr	     jboucher	      mfraser	     sn0018
+alenzi	       dawson	     jboudreau	      mgao	     sn0019
+alexander      dawsonw	     jboyle	      mgosse	     sn0020
+alexc	       dbate	     jcampbell	      mhall	     sn0021
+alexis	       dbatten	     jcao	      michaelj	     sn0022
+alfarran       dbreen	     jchan	      miles	     sn0023
+alghamd2       dcarson	     jchen	      miller1	     sn0024
+alhaddad       dchapman      jcheung	      miller4	     sn0025
+alhadlag       dcoady	     jcoady	      milonas	     sn0026
+alhadlaq       dcollier      jconnolly	      mingjie	     sn0027
+alhajji        dcox	     jcooper	      mingo	     sn0028
+alhamadi       dcui	     jcox	      minshull	     sn0029
+alhamed        ddeon	     jcurtis	      miqbal	     sn0030
+alhassan       ddo	     jdai	      mishra	     sn0031
+alhejji        ddonald	     jday	      missri	     sn0032
+alicia	       dduncombe     jdeman	      mitravitz      sn0033
+aliu	       debly	     jdeng	      mitton	     sn0034
+aljasser       debnath	     jdu	      mkane	     sn0035
+alkaraki       decoffe	     jdunbar	      mkidwai	     sn0036
+alkayale       decoste	     jean	      mlandry	     sn0037
+alkhalili      deering	     jedaibi	      mleblanc	     sn0038
+alkins	       dehkordy      jefferson	      mlynch	     sn0039
+allan	       delaney	     jeffm	      mlyu	     sn0040
+allanb	       dell	     jeffreyf	      mmacdonald     snider
+allisonb       delouye	     jehnself	      mmaclean	     society
+alluhaib       deman	     jenkins	      mmacleod	     societydesk
+almakrami      demelo	     jennam	      mmacmullin     sokolov
+almutham       demian	     jennas	      mmacneil	     solak
+alnafisa       dentremon1    jenniferc	      mmason	     song
+alnaim	       dentremont    jeremys	      mmccann	     songhan
+alnajdi        deroos	     jesse	      mmcdonald      souchereau
+alnajjar       desjardins    jessen	      mmcginn	     soukup
+alnamer        despres	     jessica	      mmcnutt	     sousa
+alnasser       deveci	     jesso	      mmcphee	     south
+alnefaie       dever	     jessome	      mmei	     spallacci
+alrashed       deverill      jestin	      mnasser	     spaul
+alrazani       devine	     jevin	      modirian	     specht
+alsayed        devonr	     jewkes	      moench	     spencerc
+alshahrni      devouge	     jfan	      moffat	     spencerg
+alshammary     dfan	     jfarrell	      moffatt	     spencerr
+altair	       dferguson     jfong	      mohamedm	     srobinson
+alturki        dfonseca      jfoster	      mohammada      sruan
+alucas	       dgidney	     jfrank	      mohsen	     ssampson
+alves	       dgoodwin      jfraser	      moir	     sshapiro
+alyousef       dgsu	     jghosn	      molly	     ssimpson
+amacinnis      dhackett      jgreen	      monaghan	     ssong
+amani	       dick	     jhagen	      mongrain	     sspencer
+amaral	       digiosia      jhill	      monsen	     stang
+amber	       dilcher	     jhiltz	      montana	     stanwood
+amccallum      dimarco	     jhu	      moore	     startsev
+amcisaac       dinatale      jiabin	      morash	     steadman
+amilios        ding	     jiachen	      moratz	     steels
+amills	       dingwel1      jialiang	      moreira	     stephenc
+amirf	       diwen	     jiang	      morganm	     stephenson
+amjad	       djenkins      jiangwei	      moriarty	     stevenp
+amjd	       dmacdonald    jianh	      morine	     stewart1
+amoore	       dmcphee	     jianxiang	      morriso1	     stirling
+amorton        dmitchell     jiaqi	      morrissey      stiskin
+amoussa        dmurphy	     jiawei	      morum	     stockley
+amuise	       dmustafa      jiawen	      morykot	     stokes
+amullen        dnguyen	     jiaxiang	      mosleth	     stolz
+amurphy        dnorris	     jiaxing	      mouawad	     stone
+anargiros      doherty	     jiaxinl	      mouhcine	     story
+anastasia      doig	     jiayu	      mpage	     stout
+andrew	       dol	     jiayuw	      mpike	     stowe
+andrews        doliveira     jida	      mpinto	     stranc
+andrey	       domingo	     jiexi	      mpyne	     strandholt
+aneeqa	       dong	     jiez	      mqnguyen	     strom
+ang	       dongkyu	     jiffri	      mreid	     stuartt
+anicol	       donnelly      jilil	      msaleh	     stubbert
+ansems	       doras	     jingchen	      msampson	     summerbymu
+anthonyd       dorukhan      jingjing	      mscott	     susman
+antonio        doss	     jingwei	      mstuart	     sutherl2
+anunes	       douglass      jingyang	      mtanner	     sutherland
+anzaq	       dover	     jinkpen	      mtawakol	     swalker
+apalmer        dpc	     jinkun	      mthomas	     sweet
+apatterson     dpc00	     jirving	      mtompkins      sweete
+apeterson      dpc01	     jiutian	      muchayi	     swinamer
+appel	       dpc02	     jjames	      mudaiheg	     swinden
+apyke	       dpc03	     jjantzlee	      mudry	     swu
+aqian	       dpc04	     jjchen	      mugford	     sxue
+aquota.user    dpc05	     jjiang	      muh	     syang
+arafsha        dpc06	     jjunior	      muharram	     sye
+arbuckle       dpc07	     jkeddy	      muiruri	     syed
+ardalan        dpc08	     jkelley	      muise	     sykes
+areid	       dpc09	     jkerr	      mullen	     syoung
+arghavan       dpc10	     jko	      mulock	     syrnick
+arhabi	       dpc11	     jla	      mun	     szhai
+ario	       dpc12	     jlalonde	      mundy	     szhao
+arrott	       dpc13	     jlangille	      munroe	     szhu
+arruda	       dpc14	     jlee	      murchison      taaffe
+arseneault     dpc15	     jli	      musgrave	     tafkari
+arshad	       dpc16	     jlocke	      mutsaers	     taheri
+arthur	       dpc17	     jlogan	      mward	     tairan
+asaff	       dpc18	     jlynch	      mwhite	     take
+asampson       dpc19	     jma	      mwright	     talhamed
+asfour	       dpc20	     jmacdonald       mxu	     tallen
+ashannon       dpc21	     jmacleod	      myalls	     tallon
+asher	       dpc22	     jmacneil	      myang	     talmage
+ashleyl        dpc23	     jmartin	      myers	     tameem
+ashlyn	       dpc24	     jmccann	      myrden	     tamo
+ashy	       dpc25	     jmcnutt	      myuan	     tao
+asmith	       dpc26	     jmeng	      myue	     tarczy
+astead	       dpc27	     jmiller	      mzinck	     tawakol
+atan	       dpc28	     jmorash	      mzoghaib	     tawil
+atieh	       dpc29	     jmorgan	      nabay	     taylee
+atkinson       dpc30	     jmorrissey       nabil	     taylorb
+atripathi      dpc31	     jmullen	      nabokov	     tbennett
+aubrecht       dpc32	     jmunro	      naclo	     tbest
+auclair        dpc33	     jnguyen	      nadir	     tblair
+aucoin	       dpc34	     joey	      naeem	     tburns
+aurinjoy       dpc35	     johnstone	      naif	     tcaines
+awan	       dpc36	     johntest	      naji	     tchen
+awheaton       dpc37	     jonathanh	      nakajima	     tcole
+awkar	       dpc38	     jonsson	      namani	     tcorkum
+ayang	       dpc39	     jordanb	      nash	     tcrowell
+ayas	       dpc40	     jordanc	      nason	     tdent
+ayaz	       dpomeroy      jordanr	      nasralla	     teeuwen
+ayorke	       drae	     jose	      nasser	     terpstra
+ayoub	       drafiq	     josephw	      nathan	     terrio
+ayoung	       dread	     josh	      nathanm	     testa
+azeem	       drew	     joshua	      nathans	     tetford
+azhang	       droberts      joshuac	      nattwood	     teverett
+azhao	       drobichaud    joshuad	      nawar	     tguinan
+azimi	       drouillard    joudrey	      nbaker	     thakrar
+azinck	       dsantos	     jpark	      nbrisson	     than
+babaei	       dsharpe	     jparsons	      nbrooks	     thashmi
+babineau       dshen	     jpei	      nburris	     theriaul
+back	       dszabo	     jpereira	      ncampbell      thien
+badruddin      dtang	     jperkins	      nclowes	     thiessen
+baggio	       dubois	     jperrie	      nearing	     thomasb
+bagnald        duccuong      jpeters	      negahban	     thomasg
+bailey	       ducros	     jphillips	      negin	     thomson
+bainard        duggan	     jraymond	      neil	     thordarson
+bak	       dumont	     jreyes	      newson	     thuynh
+balan	       dunbar	     jrobertson       neyousha	     tian
+balardo        duncombe      jrouleau	      nguyen	     tianbo
+bali	       dunn	     jrowsell	      nguyen1	     tianlang
+baloushi       durden	     jryang	      nickerson      tibbel
+bamatraf       durnin	     jsalloum	      nicolas	     tick
+bana	       duvar	     jshepherd	      nicoles	     tilley
+bance	       dwagner	     jshi	      nicoll	     timmons
+banks	       dwalker	     jshortt	      nigel	     tingley
+bao	       dwei	     jsobey	      nijenhuis      tiro
+bardos	       dwhite	     jstirling	      nip	     tjenkins
+bargen	       dwilliams     jsun	      niu	     tli
+barghout       dwillis	     jswain	      niyomugabo     tlin
+baron	       dwilson	     jtait	      njohnson	     tma
+barr	       dwu	     jtan	      nliu	     tmacdonald
+barrett        dyao	     jtaylor	      nmcdonald      tmacintyre
+barreyre       dylanq	     jthomson	      nmorris	     tmacphee
+barron	       dzeng	     jtrainor	      nmurphy	     tmills
+barss	       dzhang	     jtupper	      noori	     tolliver
+bastos	       dzhao	     jturner	      northorp	     tomkins
+bathe	       earle	     juan	      nosoudi	     topping
+batten	       eaton	     junc	      noujaim	     tournier
+baur	       ebaa	     jung	      nowers	     tozzo
+baxter	       eberding      junhao	      nperry	     trask
+bayer	       ecameron      junliang	      nrobertson     travers
+bayne	       echedrawe     junnan	      ntaylor	     travism
+bbaker	       echen	     juntao	      ntran	     tremblay
+bbrady	       echeung	     junting	      ntremblay      trewarth
+bbremner       ecmm6000      jurcina	      nwaigwe	     trim
+bclarke        edaley	     justine	      nwankwo	     tristanh
+bcole	       edavid	     justinp	      nwu	     troberts
+bcovey	       edawson	     jviolette	      nxia	     trotter
+bcyr	       edgar	     jwalker	      nxuan	     trudolph
+bdoucet        edoiron	     jwang	      o365read	     truong
+bean	       edokpayi      jwilson	      oakhoundi      trussell
+beatrice       edwards	     jwolf	      oali	     tscott
+bebe	       eedwards      jwong	      obrien	     tse
+beerman        efeoglu	     jxia	      odell	     tseaboyer
+benc	       efraser	     jyoung	      odonnell	     tuan
+beneta	       egener	     jzhuang	      oedegaard      tuckerton
+benham	       eharper	     jzou	      office365test  tufford
+benjaminm      ehill	     kaadou	      offman	     tufts
+benjamins      ehorne	     kahlon	      ogbudibe	     tulloch
+bensalim       eiman	     kahnert	      ohearon	     tully
+berardelli     eissa	     kaiwen	      oickle	     tumer
+bernardk       elahi	     kalitsis	      okaroafa	     tundebyass
+berrigan       elangley      kallada	      okonofua	     twang
+bethel	       elawrence     kallevik	      olver	     twilliams
+beyer	       elee	     kallil	      omari	     twong
+bfrancis       eleftheros    kambe	      omunro	     txia
+bgaragan       elewis	     kamermans	      oneil	     tyler
+bhabis	       elford	     kammelu	      onyeka	     tylerl
+bhan	       eliasv	     kanawati	      opaul	     tylerm
+bhanna	       elliott	     kane	      operator	     tylerr
+bhannah        ellis	     kankanamge       orourke	     tymon
+bhasin	       elmasry	     karavos	      orovec	     tyoung
+bhe	       elrahaman     karimi	      osman	     tzhao
+bhong	       elshaer	     karlsen	      osullivan      tzhou
+bhope	       elwood	     kashgari	      oswald	     ugwoke
+bhowlett       emalone	     kashin	      ouellett	     utter
+bhsu	       emason	     kasmani	      overing	     valotaire
+bhuang	       emcneill      kasuni	      owong	     vanshika
+bhughes        emichels      kathleenm	      oyewole	     vaswani
+bhunt	       emoss	     kathrynm	      pachal	     vataniman
+bhyun	       eng	     katsihtis	      pacheco	     vellis
+bienko	       enguyen	     katz	      packman	     venner
+bijman	       ephrem	     kchau	      padraec	     vervaecke
+billings       epshtein      kcox	      page	     verwold
+bilodeau       erae	     kdavis	      pak	     victor
+bing	       erixon	     kdean	      pan	     vienneau
+bingeman       erobinson     kdrew	      pannell	     visser
+birch	       erskine	     kduan	      paquin	     vivarais
+bird	       erwin	     keating	      paramsothy     vonapartis
+birkbeck       esler	     kec	      parkin	     vshukla
+birving        esse	     keeble	      pasich	     vtse
+bishop	       esummers      keith	      patrick	     vunoreau
+bistekos       ethorpe	     kellowa1	      patriquin      wadden
+bjames	       evans	     kellym	      patterson      wagdi
+bjennings      eve	     kelm	      patton	     wakeham
+bjia	       evelyn	     kempff	      paulb	     waldner
+bjork	       everett	     kenneth	      paulw	     walter
+bkelly	       evers	     kennethp	      pavlo	     wang1
+bking	       eyang	     keriann	      pawelczyk      warr
+blair	       eyoung	     kerimbek	      payne	     wauchope
+blange	       faisala	     kettleson	      payzant	     wawer
+ble	       faleh	     keyi	      pazuki	     wchen
+blewis	       fanjoy	     keyserling       pchen	     weber
+bli	       faraj	     kfarrell	      pcross	     wegner
+blois	       farhat	     kfenton	      peck	     weidmann
+blu	       farias	     kfrancis	      pedersen	     weikeng
+bmacneil       farooq	     kgill	      pei	     weikuan
+bmillar        farr	     kgreen	      penner	     weir
+bmin	       farrow	     khackett	      penny	     weiw
+bmorris        farukh	     khanal	      perrie	     wellington
+bodenstab      faydi	     khatkar	      perrott	     wells
+boduryan       fazeli	     khattana	      pervin	     welsh
+boer	       fchan	     khemming	      pestaina	     wentao
+bojilova       fchen	     khobreh	      petert	     wenyi
+bolleddula     fcui	     khorne	      pettigrew      westhaver
+bond	       fedora	     khu	      pfares	     weston
+borg	       fei	     khuskins	      phaltner	     wgray
+bortolin       feitosa	     kibrom	      phan	     wharris
+boshra	       feldman	     kidwai	      pick	     wheaton
+bosse	       felemban      kiefte	      pidduck	     whitten
+boudrea1       feliz	     kiet	      pierce	     whu
+bourroux       feltmate      kilby	      piercev	     whynacht
+bowdridge      fengg	     kilfoil	      piercey	     wiebe
+bowles	       fenwick	     killam	      pierre	     wielens
+boyle	       fernando      kimberly	      pieters	     wiersma
+bpace	       festeryga     kimberlym	      piltz	     wiktorin
+bpachal        fezeu	     kinsella	      pippy	     wilbur
+bparker        fifield	     kirkley	      pitts	     willa
+bpatterson     figueiredo    kiros	      pjones	     william1
+bpoole	       filho	     kitsuda	      pking	     williams
+brace	       fillmore      kjohnson	      pknowles	     williamson
+bradyk	       finanders     kkumar	      plee	     wimmer
+braha	       finley	     kle	      plouffe	     windsor
+brandons       finner	     kleiser	      plunn	     wismer
+branger        finter	     klindsay	      plynch	     wits
+brathwai       fjiang	     klug	      pmartin	     wjin
+bravo	       flehan	     klynch	      pogoda	     wli
+breedon        fleming1      kmacdonald       polubiec	     wmartell
+brennanm       flysak	     kmackenzie       poon	     wmurphy
+bret	       fmartin	     kmacquin	      popescu	     wolde
+brewer	       fmcdougall    kmcbride	      popoola	     wolf
+brianm	       fodor	     kmclean	      post	     wolff
+brianna        foerster      knguyen	      pothier	     wong
+brilz	       foran	     knott	      potter	     wong1
+brink	       forde	     knox	      powell	     woodhouse
+brisk	       fournier      kobrien	      pparker	     woodland
+brisson        fowler	     koganezawa       pquinn	     worden
+brock	       fqiao	     kolbe	      prall	     wsi
+broderick      framoss	     kong	      preston	     wstone
+brookt	       francey	     kornacki	      prof3132	     wsu
+brousseau      franch	     korus	      protter	     wtang
+browko	       frankin	     kou	      psingh	     wtian
+brown2	       freill	     kpurcell	      ptruong	     wwang
+bruce	       french	     krochko	      puddingt	     wwilson
+brunell        frent	     kroeker	      pulsifer	     wwu
+brushett       fresia	     krogers	      pundlik	     wxia
+bryden	       fritz	     kroon	      purdue	     wxiang
+bschurman      frizzell      krui	      purdy	     wxu
+bshe	       frost	     ksimon	      putnam	     wyin
+bshea	       ftang	     ksun	      pvaughan	     wyu
+bsnow	       fulmore	     kuang	      pzhu	     wzhao
+buchka	       fultz	     kubica	      qahtani	     wzhu
+buckingham     fupso	     kulakevi	      qgillis	     xdong
+bullen	       fwei	     kulik	      qingtian	     xfeng
+bullock        fyousif	     kulish	      qiu	     xfyang
+burcher        gabriel	     kutesa	      qizhong	     xhao
+burmaster      gagne	     kvmvdi	      qli	     xiaochuan
+burneau        gagnon	     kwalsh	      qlin	     xiaonan
+buzanis        gallagher     kwang	      qpan	     xiaoyu
+bwinters       gallinaugh    kwatson	      qunzhi	     xike
+bwright        galvin	     kwen	      quota.user     xil
+byin	       gambrose      kwon	      qyang	     xingyu
+cagri	       gandhi	     kylec	      qzhan	     xiong
+cahill	       gannage	     kylie	      qzhou	     xituo
+cai	       gannon	     kyra	      ragab	     xiuzhe
+caines	       garagan	     kyte	      ragheeb	     xling
+callum	       gareth	     kzhao	      rahimian	     xliu
+camball        garrison      kzhou	      rai	     xmeng
+cameron2       garry	     kzhu	      raissa	     xshen
+cameronk       gaspar	     laamanen	      raja	     xuc
+campbel1       gass	     laing	      ralfehaid      xuefei
+campbell1      gattous	     lakner	      ralko	     xuemin
+candlish       gault	     lalonde	      ramaka	     xuewa
+candrews       gauthier      lamezon	      ramasamy	     xueying
+canning        gautreau      lamontagne       ramey	     xuhao
+canvin	       gawdat	     landrews	      ramik	     xuhui
+caouette       gay	     landsman	      rane	     xujie
+capewell       gazheek	     lang	      rankine	     xuwei
+capone	       gbao	     lange	      raphael	     xuwen
+card	       gdeon	     lantao	      ratchinski     xuy
+cardoso        geaney	     lanz	      rau	     xwei
+carey	       geizer	     lapierr1	      rawding	     xwu
+carline        geng	     lapthorne	      raymond	     xxia
+carmelo        geoff	     larin	      rayub	     xyan
+carmen	       georgeb	     laroche	      rbukhari	     xyliu
+carter	       gerrie	     lasenko	      rbutler	     yach
+casaroli       gesner	     latham	      rcampbell      yahu
+cashen	       geus	     latouf	      rchen	     yalcin
+cassidy        ggillis	     laufer	      rcoles	     yamamura
+caume	       ghamdi	     laura	      rconnell	     yanes
+cavalcanti     ghandar	     laurab	      rcui	     yangfan
+cave	       ghassemi      laurad	      rdunphy	     yangl
+caven	       ghazayil      lauram	      reagh	     yangy
+cawthra        ghislain      laurie	      rearle	     yanlin
+cbaltzer       ghiz	     lavasani	      rebar	     yanmin
+cbell	       ghubley	     lavell	      rebecca	     yans
+cbertrand      gianluca      lawson	      rebeccaw	     yanzhe
+cbrennan       gibb	     layne	      redford	     yaodong
+cburns	       giffin	     layoub	      redgate	     yaoxin
+ccampbell      ginkel	     lblack	      redmond	     yassin
+cchang	       gkalra	     lbrown	      redondo	     yatong
+ccheung        glasgow	     lcai	      rempel	     ybliu
+cchilds        gmacdonald    lcheng	      revans	     ycao
+cchisholm      gmailman      lcole	      reyes	     ycheng
+ccleary        gneil	     lcomeau	      rfisher	     ychung
+cconnors       goddard	     lcook	      rgosse	     ydai
+ccooper        goguen	     ldickey	      rgray	     ydavison
+cdemond        goickle	     ldoherty	      rherritt	     ydeng
+cdyoung        gokeefe	     lduggan	      rhillier	     yduan
+cengiz	       goldy	     leach	      rhoads	     yengue
+cernescu       golf	     leah	      rhopper	     yeo
+cervantes      gomm	     lefebvre	      rhume	     yeojin
+cfox	       gondim	     leggett	      rhynowiede     yeung
+cfrank	       good	     lennie	      rice	     yfazili
+cgeng	       goodman	     leonk	      richards	     yfguo
+cgordon        gordon	     leung	      riebel	     yge
+chaimberg      goreham	     leuschen	      rimmingt	     yhan
+chale	       gosnell	     lewicki	      ripley	     yhu
+chall	       gotziaman     lfisher	      ritchot	     yidi
+chamantha      goucher	     lgallant	      rizvi	     yifan
+changhor       gowan	     lgao	      rjohnston      yifanh
+chao	       grabert	     lgraham	      rkashgari      yifei
+charest        graveline     lharrison	      rkhis	     yifu
+charles        graven	     lhartery	      rlee	     yihong
+charley        graves	     lhong	      rlewis	     yijie
+chartier       greene	     lhunt	      rlowe	     yil
+chaulk	       greenglass    li1	      rmacleod	     yin
+chaumpan       grigg	     li4	      rmartell	     yingrui
+chavez	       griggs	     li5	      rmills	     yingzhen
+chavywaddy     griswold      liangjie	      rmurphy	     yip
+chen1	       grose	     lieuwen	      rnassif	     yiqun
+chengg	       gross	     lingl	      robert	     yiqunl
+chenguang      gsantos	     lingyu	      robertn	     yiting
+chengzheng     gseto	     linhui	      robertson      yixuan
+chiang	       gsmedley      linton	      robichaud      yiying
+chiasson       gsummers      linw	      roches	     yjia
+chica	       gtan	     lively	      rodgers1	     yjiang
+chinener       guadagnin     liz	      roliveira      ykong
+chircop        guan	     lkim	      rollin	     yli
+cho	       guest_arkell  llunn	      rong	     yliang
+chostin        guilletat     lmarsman	      rorym	     ylin
+chou	       gummett	     lobban	      rosalind	     yliu
+chretien       gunby	     lockhart	      rosen	     ylyu
+christian      guthro	     lolmstead	      rosep	     youngc
+christie       gwach	     lombard	      rosshirt	     youssef
+christin       gwang	     lombardi	      rostek	     ypark
+christophe     gzhao	     longhao	      rotermund      ypeng
+chu	       habis	     longley	      rotondi	     ypuppala
+chukwu	       hagen	     longmire	      rouleau	     yren
+church	       haidar	     lorenzm	      rowse	     yshen
+churney        haigh	     losole	      roy	     yshu
+ciambra        hailin	     lost+found       rpan	     ysu
+cjohnson       hairong	     love	      rpurcell	     ysun
+clamageran     haishan	     loxdale	      rread	     ytang
+clay	       haiying	     lpitman	      rrichard	     ytong
+cleary	       haliburt      lporter	      rsen	     yuan
+cleveland      halliday      lpower	      rsilva	     yuanx
+cleversey      hallink	     lqi	      rskinner	     yuec
+cli	       halpenny      lregala	      rsmith	     yuejia
+clinton        hamdan	     lrotermund       rstevens	     yueting
+cliu	       hamid	     lscott	      rthomas	     yuez
+clo	       hamilton      lsullivan	      rtracey	     yujiao
+cma	       hammell	     lsweeney	      rui	     yujie
+cmacdonald     hang	     ltian	      ruige	     yunfei
+cmackie        hange	     ltucker	      ruipeng	     yunpeng
+cmacneill      hankel	     lu1	      ruipengl	     yunqian
+cmarriott      hanlon	     lucas	      ruiyang	     yurt
+cmccallum      hannon	     lucasc	      ruiyuan	     yushen
+cmorris        hansen	     luhmer	      ruizhe	     yuxiangw
+cmunroe        hanw	     luiss	      runkel	     yuxiao
+cmurray        hao	     luiz	      rushton	     yuxuan
+cnader	       haochen	     luk	      rutherford     yuxuanz
+cnguyen        haohai	     luke	      rutledge	     yuz
+cody	       haoxu	     lukem	      rwatson	     ywang
+coelho	       haq	     lulu	      rwheeler	     ywilliams
+coffie	       harnett	     lundy	      rwilbur	     yxiong
+coffin	       harper	     luong	      rwong	     yyliu
+colaiacovo     harrett	     lupoi	      rwu	     yyuan
+colborne       harrie	     lutar	      rxu	     yzhang
+coler	       harriso1      luyao	      ryan	     zacharia
+coley	       harsa	     lwei	      ryang	     zai
+col

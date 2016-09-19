@@ -1,0 +1,2 @@
+Pipeline is a method that two process communicate each other in Unix system. Pipeline actually is a file only exists in RAM. The 
+ output of one process will be processed to the pipeline and it will became an input for another process.
