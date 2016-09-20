@@ -1,5 +1,5 @@
 1.
-  (a): Roses are red, violets are not blue.
+  (a): Roses are not red, violets are not blue.
   (b): The bus is not late and my watch is not slow.
   (c): If a number is not prime then it is not odd and it is not 2.
   (d): If a number x is not a prime, then √x is a rational number.
@@ -17,22 +17,25 @@
      1  1  0       1       1      0
      1  0  1       1       0      1
      1  0  0       1       1      0
+     0
+
+
      So A is true, B is false and C is true. Or A is true, B is true and C is false.
 
 (2)   A B   ~A->~B  ~B->~A
       1 1     1       1
-      1 0     1       0  So the answer is that both A and B are
-      0 1     1       1
+      1 0     1       0  
+      0 1     0       1
       0 0     0       1
-     So the answer is that both A and B are telling truth or A is telling the truth and B is lying.
+     So the answer is that both A and B are telling truth or A is telling the truth and B is lying. Or A is telling the truth, B is lying.
 
 
 (3)    A  B  C   ~B->~C  ~C->~A  ~A->~B
        1  1  1     1       1       1
        1  1  0     1       0       1
-       1  0  1     1       1       1
-       1  0  0     1       1       1
-       0  1  1     1       1       1
+       1  0  1     0       1       1
+       1  0  0     1       0       1
+       0  1  1     1       1       0
        0  1  0     1       1       0
        0  0  1     0       1       1      
        0  0  0     1       1       1
@@ -40,10 +43,10 @@
 
  3. (a).∼ ((p∨ ∼ q) ∧ r)=(~ (pv ~ q) V r )=(~p ∧ q) V ~r
 
-    (b). ~((p∧q) U r) U (r U s)=false
-     r U s is false. Both r and s is false.
-     (p ∧ q) U r is false.
-     p  ∧  q is false. p and q can be both false, or one true one false
+    (b). ~((p∧q) U r) U (r U s)=0
+     r U s is 0. Both r and s is 0.
+     (p ∧ q) U r is 0.
+     p  ∧  q is 0. p and q can be both 0, or one 1 one 0
 
 4. （a)
         (1)Yes. Because 6 can be divided into 2*3, if n can be divisible by 6, it must can be divided by 3.
