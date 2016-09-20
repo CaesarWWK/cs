@@ -1,7 +1,0 @@
-The dev directory in Unix is mainly for files or drivers relating to devices.
-
-In Unix systeam, hardware or devices exists in the form of files. The system can
-
-communicate with hardware or devices like keyboard, ports, by using the files
-
-in the dev directory. Each file in the directory represents different hardware or devices.

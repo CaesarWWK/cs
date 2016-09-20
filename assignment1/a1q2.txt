@@ -1,4 +1,0 @@
-1.It was developed in the 1970s, and the main author was Ken Thompson.
-2.The target machine for Unix is PDP11/20.
-3.The pipe was implemented in Unix in 1972
-4.The first version of Linux was developed in 1991.
