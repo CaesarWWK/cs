@@ -1,26 +1,9 @@
-脚本启动于 2016年09月19日 星期一 11时06分04秒
-weikuan@bluenose:~/csci2132/assignment1$ mv info ../
-weikuan@bluenose:~/csci2132/assignment1$ ls
-a1q2.txt  a1q4.txt  abcde.java	info3  typescript
-a1q3.txt  a1q6.txt  info2	info4
-weikuan@bluenose:~/csci2132/assignment1$ ls[D[Dmv info ../[D[D[D[D[D[D[D[D[D[D[Dls[K[D[Dgit pull origin master[D[D[D[D[D[D[D[D[D[D[D[D[D[D[D[Dsh [K[D[D[D[D[Dcommit -m"233"[D[D[D[D[D[D[D[D[D[D[D[D[D[D[9Ppush [D[D[Dll origin master[D[D[D[D[D[D[D[D[D[D[D[D[D[D[D[D[D[D[D[D[D[Dls[K[D[Dmv info ../[D[D[D[D[D[D[D[D[D[D[Dls[K[D[D[K ls [a-z][a-z][a-z][a-z][a-z].java
+mv info ../
+ ls [a-z][a-z][a-z][a-z][a-z].java
 abcde.java
-weikuan@bluenose:~/csci2132/assignment1$ abcde.java
-bash: abcde.java: 未找到命令
-weikuan@bluenose:~/csci2132/assignment1$ ls part[0-79[[D[K].txt>>out.txt
-ls: 无法访问part[0-79].txt: 没有那个文件或目录
-weikuan@bluenose:~/csci2132/assignment1$ touch part1.txt
-weikuan@bluenose:~/csci2132/assignment1$ nano part1.txt
-[0;10m[39;49m[39;49m[0;10m[H[J[0;10;7m  GNU nano 2.3.1 [13b文件： part1.txt [32b [22;34H[ 已读取0 行 ][B^G[0;10m 求助[14G[0;10;7m^O[0;10m 写入[27G[0;10;7m^R[0;10m 读档[40G[0;10;7m^Y[0;10m 上页[53G[0;10;7m^K[0;10m 剪切文字  [0;10;7m^C[0;10m 游标位置[B[0;10;7m^X[0;10m 离开[14G[0;10;7m^J[0;10m 对齐[27G[0;10;7m^W[0;10m 搜索[40G[0;10;7m^V[0;10m 下页[53G[0;10;7m^U[0;10m 还原剪切  [0;10;7m^T[0;10m 拼写检查[3d[1;73H[0;10;7m已更改[3d[0;10m2333[22d[0;10;7m储存更动过的缓冲区吗(回答 "No" 会撤销修改)？ [34b  Y[0;10m 是[K[B[0;10;7m N[0;10m 否  [14G   [0;10;7m^C[0;10m 取消[K[22;45H[0;10;7m要写入的文件名: part1.txt [18b[B^G[0;10m 求助[23;21H[0;10;7mM-D[0;10m DOS 格式[23;41H[0;10;7mM-A[0;10m 附加[23;61H[0;10;7mM-B[0;10m 备份文件[B[0;10;7m^C[0;10m 取消[24;17H    [0;10;7mM-M[0;10m Mac 格式[24;41H[0;10;7mM-P[0;10m 前引[22;26H[B[39;49m[0;10m[J[1;73H[0;10;7m      [22;33H[0;10m[1K [0;10;7m[ 已写入1 行 ][0;10m[K[24;80H[24;1Hweikuan@bluenose:~/csci2132/assignment1$ ls
-a1q2.txt  a1q4.txt  abcde.java	info3  out.txt	  typescript
-a1q3.txt  a1q6.txt  info2	info4  part1.txt
-weikuan@bluenose:~/csci2132/assignment1$ ls[D[Dnano part1.txt[D[D[D[D[D[D[D[D[D[D[D[D[D[D[1@touch[C[C[C[C[C[C[C[C[C[C[D[D[D[D[D[D[D[D[D[D[D[D[D[D[Dls part[0-79].txt>>out.txt
+ls part[0-7][0-9].txt>>out.txt
 weikuan@bluenose:~/csci2132/assignment1$ ls
-a1q2.txt  a1q4.txt  abcde.java	info3  out.txt	  typescript
-a1q3.txt  a1q6.txt  info2	info4  part1.txt
-weikuan@bluenose:~/csci2132/assignment1$ nano[D[K[D[K[D[K[D[Kcat out.txt
-part1.txt
-weikuan@bluenose:~/csci2132/assignment1$ exit
-exit
-
-Script done on 2016年09月19日 星期一 11时10分03秒
+a1q2.txt  a1q4.txt  a1q6.txt    info2  info4    part01.txt
+a1q3.txt  a1q5.txt  abcde.java  info3  out.txt
+weikuan@bluenose:~/csci2132/assignment1$ cat out.txt
+part01.txt
