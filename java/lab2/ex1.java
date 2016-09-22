@@ -8,18 +8,22 @@ public class ex1{
     Scanner input = new Scanner(System.in);
     n=input.nextInt();
     point[] points=new point[n];
-    
-      for(int c=0;c<n;c++)
+    int c =0;
+      for(;c<n;c++)
     {
-      points[c]=(new point((int)(3*Math.random()),(int)(3*Math.random())));
-          }
-     int i=0;
+      points[c]=new point((double)(2*Math.random()),(double)(2*Math.random()));
+                    }
+     double i=0;
      for(;n>0;n--)
      {
        if(circle1.contains(points[n-1]))
        {
          i++;
-       }
+        
+               }
      }
-     System.out.print(i);
+     double count=c;
+         
+
+     System.out.print(4.0*i/c);
    }}

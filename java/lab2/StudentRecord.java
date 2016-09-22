@@ -26,16 +26,16 @@ public class StudentRecord{
   }
   public String gets()
   {
-    return this.lastname();
+    return this.lastname;
   }
   public int getb()
   {
-    return this.bannerID();
+    return this.bannerID;
   }
 
    public String toString()
    {
-     return (this.getf()+" "+this.getl()+"  "+this.getb());
+     return (this.getf()+" "+this.gets()+"  "+this.getb());
    }
 
    

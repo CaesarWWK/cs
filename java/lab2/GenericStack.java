@@ -25,6 +25,7 @@ public T pop()
   {
     p=stack.remove(stack.size()-1);
   }
+  
   return p;
 }
 public boolean isEmpty(){
