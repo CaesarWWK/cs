@@ -11,7 +11,7 @@ public class ex1{
     int c =0;
       for(;c<n;c++)
     {
-      points[c]=new point((double)(2*Math.random()),(double)(2*Math.random()));
+      points[c]=new point((2*Math.random()),(2*Math.random()));
                     }
      double i=0;
      for(;n>0;n--)

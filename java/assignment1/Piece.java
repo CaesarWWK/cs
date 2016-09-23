@@ -23,7 +23,7 @@ abstract class Piece{
    this.xpos=x;
    }
   public void sety(int y)
-  { 
+  {
     this.ypos=y;
     }
 
@@ -41,4 +41,6 @@ abstract class Piece{
  {
  return this.ypos;
  }
+ abstract boolean move(String a,int b);
+  abstract boolean move(String a);
   }

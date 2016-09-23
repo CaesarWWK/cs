@@ -2,19 +2,19 @@ public class SlowFlexible extends SlowPiece{
 
     public SlowFlexible(String n,String c,int xpos,int ypos)
   {
- super(n,c,xpos,ypos);  
+ super(n,c,xpos,ypos);
   }
 
    public boolean move(String direction)
    {
 
-      if(direction=="left")
+      if(direction.equals("left"))
       { if(this.getx()<=8&&this.gety()<=8)
         {
           this.setx(this.getx()-1);
           return true;
         }else return false;       }
-        if(direction=="right")
+        if(direction.equals("right"))
         {
           if(this.getx()<=8&&this.gety()<=8)
           {
@@ -24,13 +24,13 @@ public class SlowFlexible extends SlowPiece{
         }else return false;
 
 
-   if(direction=="up")
+   if(direction.equals("up"))
    { if(this.getx()<=8&&this.gety()<=8)
      {
        this.sety(this.gety()-1);
        return true;
      }else return false;       }
-     if(direction=="down")
+     if(direction.equals("down"))
      {
        if(this.getx()<=8&&this.gety()<=8)
        {

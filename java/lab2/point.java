@@ -1,8 +1,8 @@
-public class point<T>{
-   private T xpos;
-   private T ypos;
+public class point{
+   private double xpos;
+   private double ypos;
 
-  public point(T x,T y)
+  public point(double x,double y)
 {
   this.xpos=x;
   this.ypos=y;
@@ -10,19 +10,19 @@ public class point<T>{
 
 
 public point(){}
-public T getx()
+public double getx()
 {
   return this.xpos;
 }
-public T gety()
+public double gety()
 {
   return this.ypos;
 }
-public void setx(T x)
+public void setx(double x)
 {
   this.xpos=x;
 }
-public void sety(T y)
+public void sety(double y)
 {
   this.ypos=y;
 }
