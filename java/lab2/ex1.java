@@ -7,23 +7,20 @@ public class ex1{
     System.out.print("Please input the number of points");
     Scanner input = new Scanner(System.in);
     n=input.nextInt();
-    point[] points=new point[n];
-    int c =0;
-      for(;c<n;c++)
-    {
-      points[c]=new point((2*Math.random()),(2*Math.random()));
-                    }
-     double i=0;
-     for(;n>0;n--)
-     {
-       if(circle1.contains(points[n-1]))
-       {
-         i++;
-        
-               }
-     }
-     double count=c;
-         
+        int c =0;
+      double i=0;//count the number of points inside the circle and outside the circle
 
-     System.out.print(4.0*i/c);
-   }}
+    for(;c<n;c++)
+      {
+        point<Double> points=new point<Double>((double)(2*Math.random()),(double)(2*Math.random()));
+
+        if(circle1.contains(points))
+          {
+            i++;
+          }
+      }//loop to generate all points and test them
+        double count=c;
+
+        System.out.print(4.0*i/c);
+   }
+ }

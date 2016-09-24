@@ -1,34 +1,42 @@
 public class SlowPiece extends Piece{
   public SlowPiece(String n,String c,int xpos,int ypos)
   {
- super(n,c,xpos,ypos);
+    super(n,c,xpos,ypos);
+    this.sett("Slow");
   }
-   public boolean move(String a,int b)
-   {
-     return false;
-     }
 
-   public boolean move(String direction)
-   {
+   public void move(String a,int b){}
 
+   public void move(String direction)
+   {
       if(direction.equals("left"))
-      { if(this.getx()<=8&&this.gety()<=8)
         {
-          this.setx(this.getx()-1);
-          return true;
-        }else return false;       }
-        if(direction.equals("right"))
-        {
-          if(this.getx()<=8&&this.gety()<=8)
-          {
-            this.setx(this.getx()+1);
-            return true;
-          }
-        }else return false;
+          if(this.getx()<8&&this.gety()<8&&this.getx()>=0&&this.gety()>0)
+            {
+              this.sety(this.gety()-1);
+              System.out.println("Move Complete");
+            }
+            else
+                System.out.println("Out of Boundry") ;
+        }
 
-     return true;}
+        if(direction.equals("right"))
+          {
+            if(this.getx()<8&&this.gety()<7&&this.getx()>=0&&this.gety()>=0)
+              {
+                this.sety(this.gety()+1);
+                System.out.println("Move Complete");
+              }
+            else
+                System.out.println("Out of Boundry");
+           }
+      }
+
   public String toString()
   {
      return(this.getname()+this.getcolor()+"S");
   }
+
+
+
 }

@@ -38,8 +38,10 @@ public class circle2d{
     return 2*this.radius*Math.PI;
   }//accessor
   public boolean contains(point x){
-    if((x.getx()-this.x)*(x.getx()-this.x)+((x.gety()-this.y)*(x.gety()-this.y))>(this.radius*this.radius)){
-      return false;
+    double a=(double)x.getx();
+    double b=(double)x.gety();
+    if((a-this.x)*(a-this.x)+(b-this.y)*(b-this.y)>(this.radius*this.radius))
+    { return false;
     }
     return true;
   }

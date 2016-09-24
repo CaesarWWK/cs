@@ -1,8 +1,8 @@
-public class point{
-   private double xpos;
-   private double ypos;
+public class point<T>{
+   private T xpos;
+   private T ypos;//generic variables can contains different types of data
 
-  public point(double x,double y)
+  public point(T x,T y)
 {
   this.xpos=x;
   this.ypos=y;
@@ -10,21 +10,21 @@ public class point{
 
 
 public point(){}
-public double getx()
+public T getx()
 {
   return this.xpos;
 }
-public double gety()
+public T gety()
 {
-  return this.ypos;
+  return this.ypos;//mutators
 }
-public void setx(double x)
+public void setx(T x)
 {
   this.xpos=x;
 }
-public void sety(double y)
+public void sety(T y)
 {
-  this.ypos=y;
+  this.ypos=y;//accessors
 }
 
 public String toString()

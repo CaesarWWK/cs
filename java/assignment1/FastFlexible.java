@@ -2,49 +2,65 @@ public class FastFlexible extends FastPiece{
 
  public FastFlexible(String n,String c,int xpos,int ypos)
   {
- super(n,c,xpos,ypos);
+    super(n,c,xpos,ypos);
+    this.sett("FastFlexible");
   }
 
-   public boolean move(String direction,int d)
-   {
-
+   public void move(String direction,int d)
+    {
+      System.out.print("sdd");
       if(direction.equals("left"))
-      { if(this.getx()<=8&&this.gety()<=8)
-        {
-          this.setx(this.getx()-d);
-          return true;
-        }else return false;       }
-        if(direction.equals("right"))
-        {
-          if(this.getx()<=8&&this.gety()<=8)
+      {
+        if(this.getx()<8&&this.gety()<8&&this.getx()>=0&&this.gety()>=d)
           {
-            this.setx(this.getx()+d);
-            return true;
+            this.sety(this.gety()-d);
+            System.out.println("Move Complete");
           }
-        }else return false;
+            else
+              System.out.println("Out of Boundry");
+        }
+
+        if(direction.equals("right"))
+          {
+              if(this.getx()<8&&this.gety()<8-d&&this.getx()>=0&&this.gety()>=0)
+                {
+                    this.sety(this.gety()+d);
+                    System.out.println("Move Complete");
+                }
+              else
+                System.out.println("Out of Boundry");
+          }
+
+          if(direction.equals("up"))
+            {
+               if(this.getx()<8&&this.gety()<8&&this.getx()>=d&&this.gety()>=0)
+                  {
+                    this.setx(this.getx()-d);
+                    System.out.println("Move Complete");
+                  }
+                  else
+                    System.out.println("Out of Boundry");
+              }
+          if(direction.equals("down"))
+            {
+              if(this.getx()<8-d&&this.gety()<8&&this.getx()>=0&&this.gety()>=0)
+                {
+                  this.setx(this.getx()+d);
+                  System.out.println("Move Complete");
+                }
+              else
+                System.out.println("Out of Boundry");
+          }
+
+      }
 
 
-   if(direction.equals("up"))
-   { if(this.getx()<=8&&this.gety()<=8)
-     {
-       this.sety(this.gety()-d);
-       return true;
-     }else return false;       }
-     if(direction.equals("down"))
-     {
-       if(this.getx()<=8&&this.gety()<=8)
-       {
-         this.sety(this.gety()+d);
-         return true;
-       }
-     }else return false;
+      public String toString()
+      {
+        return(this.getname()+this.getcolor()+"FF");
+      }
 
 
 
-   return true;
-}
-public String toString()
-{
-   return(this.getname()+this.getcolor()+"FF");
-}
+      
 }
