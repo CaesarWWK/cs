@@ -1,9 +1,9 @@
 public class ex2{
 public static void main(String[] args)
 {
-  point<Integer> point1 = new point<Integer>(10,20);
-  point<Double> point2 = new point<Double>(14.5, 15.6);
-  point<String> point3 = new point<String>("topleftx","toplefty");//generate different types of points by generics
+  point<Integer> point1 = new point<Integer>(113,224);
+  point<Double> point2 = new point<Double>(1333.5, 2.226);
+  point<String> point3 = new point<String>("C","++");//generate different types of points by generics
 
   System.out.println(point1);
   System.out.println(point2);
