@@ -1,0 +1,2 @@
+ chmod og-x hello
+ chmod u=rwx,g=r,o=r hello 
