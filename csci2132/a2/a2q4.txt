@@ -1,0 +1,12 @@
+a):
+   Inode is a kind of file which saves where the files are on the speicific 
+   location of disks. Every inode links to many files and this kind of link 
+   is called hard link. Another kind of link which links an inode to another
+   inode is called soft link.
+
+b):If we lose file1, file3 wont be removed,because file3 has a hard link 
+  with file1, which means it saves all the content of file1.
+
+   However, if we delete file2, file4 will also be removed. Because the
+   link between them is soft link, which only links them only by path.
+

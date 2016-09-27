@@ -1,0 +1,9 @@
+mv info ../
+ ls [a-z][a-z][a-z][a-z][a-z].java
+abcde.java
+ls part[0-7][0-9].txt>>out.txt
+weikuan@bluenose:~/csci2132/assignment1$ ls
+a1q2.txt  a1q4.txt  a1q6.txt    info2  info4    part01.txt
+a1q3.txt  a1q5.txt  abcde.java  info3  out.txt
+weikuan@bluenose:~/csci2132/assignment1$ cat out.txt
+part01.txt
