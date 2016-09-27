@@ -6,7 +6,7 @@ public class StudentRecord{
   public StudentRecord(String f,String l,int b){
     this.firstname=f;
     this.lastname=l;
-    this.bannerID=b;
+    this.bannerID=b;//constractor
   }
   public void setf(String f)
   {
@@ -18,7 +18,7 @@ public class StudentRecord{
   }
   public void setb(int b)
   {
-    this.bannerID=b;
+    this.bannerID=b;//mutators
   }
   public String getf()
   {
@@ -26,18 +26,18 @@ public class StudentRecord{
   }
   public String gets()
   {
-    return this.lastname();
+    return this.lastname;
   }
   public int getb()
   {
-    return this.bannerID();
+    return this.bannerID;//accessors
   }
 
    public String toString()
    {
-     return (this.getf()+" "+this.getl()+"  "+this.getb());
+     return (this.getf()+" "+this.gets()+"  "+this.getb());
    }
 
-   
+
 
 }
