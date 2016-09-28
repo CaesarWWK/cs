@@ -1,0 +1,57 @@
+脚本启动于 2016年09月28日 星期三 15时28分51秒
+weikuan@bluenose:~/csci2132/a2$ cat TomSawyer.txt |grep 'door'
+She went to the open door and stood in it and looked out among the
+But Tom did not wait for the rest. As he went out at the door he said:
+fire-crackers, a kitten with only one eye, a brass door-knob, a
+moment on the steps and then moved toward the door. Tom heaved a great
+out at one door as she brought song and sunshine in at the other.
+outside the door and set the basin on a little bench there; then he
+and began to wipe his face diligently on the towel behind the door. But
+tree-box on top of it for a steeple. At the door Tom dropped back a step
+the other aisle; he crossed before the doors; he clamored up the
+Huckleberry came and went, at his own free will. He slept on doorsteps
+uneasy, for a while, glancing at the door, every now and then, hoping
+Becky began to suspect. She ran to the door; he was not in sight; she
+through the open door and fell grateful and exhausted in the sheltering
+Red-Handed was dreaming of his doorsteps and empty hogsheads. But they
+door. Tom went to the door and began to softly lift the latch; then he
+pressed gently and the door yielded a crack; he continued pushing
+``Why, that door's open, I believe. Why, of course it is. No end of
+straightway made his stealthy exit, latching the door behind him.
+the church door creaked; the minister raised his streaming eyes above
+``And it seems to me that you said, 'Why, I believe that that door --'''
+believed the door was open.''
+Now, as Becky was passing by the desk, which stood near the door, she
+Tom Sawyer stepped in at the door and caught a glimpse of the picture.
+through the door and fly. But his resolution shook for one little
+its fences gone long ago, rank weeds smothering the very doorsteps, the
+crept to the door and took a trembling peep. They saw a weed-grown,
+``Keep still! Don't you budge! They're coming right toward the door.''
+voice; they sat down on the ground, facing the door, with their backs to
+``I'll tell you. The back door of that No. 2 is the door that comes out
+of a brick store. Now you get hold of all the door-keys you can find,
+at a distance and the other the tavern door. Nobody entered the alley or
+left it; nobody resembling the Spaniard entered or left the tavern door.
+open comes the door! It warn't locked! I hopped in, and shook off the
+hillside -- an opening shaped like a letter A. Its massive oaken door
+door closed softly. He sprang to the corner of the brick store. The next
+reached the Welshman's. He banged at the door, and presently the heads
+``Huckleberry Finn, indeed! It ain't a name to open many doors, I judge!
+groping up the hill and rapped gently at the old Welshman's door. The
+``It's a name that can open this door night or day, lad! -- and
+been applied in his case before. The door was quickly unlocked, and he
+Just as breakfast was completed there was a knock at the door. Huck
+``Because I had its big door sheathed with boiler iron two weeks ago,
+When the cave door was unlocked, a sorrowful sight presented itself in
+dead, with his face close to the crack of the door, as if his longing
+foundation-beam of the door had been chipped and hacked through, with
+squeezed his body under the door, and he knew it. So he had only hacked
+Mr. Jones left the wagon near the door and followed.
+Huck right at my door, and so I just brought them along in a hurry.''
+helped him to the door with several kicks. ``Now go and tell auntie if
+Tom ran out of doors. The company looked at each other with a perplexed
+cellar-door for -- well, it 'pears to be years; I got to go to church
+weikuan@bluenose:~/csci2132/a2$ exit
+exit
+
+Script done on 2016年09月28日 星期三 15时28分59秒

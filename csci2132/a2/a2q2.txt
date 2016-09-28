@@ -1,1 +1,3 @@
 ls [a-z]*.bak >out-file 2>errors
+
+cat /etc/passwd | cut -d: -f 1,5,7 | sort -k 3 -t':'

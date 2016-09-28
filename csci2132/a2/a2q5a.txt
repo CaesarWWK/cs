@@ -1,0 +1,4 @@
+脚本启动于 2016年09月25日 星期日 19时19分34秒
+ls /bin/[j][a]*
+/bin/jar        /bin/java   /bin/javadoc  /bin/javap
+/bin/jarsigner  /bin/javac  /bin/javah

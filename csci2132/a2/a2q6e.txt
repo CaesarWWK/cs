@@ -1,0 +1,41 @@
+脚本启动于 2016年09月28日 星期三 15时32分35秒
+weikuan@bluenose:~/csci2132/a2$ cat TomSawyer.txt |grep ^'s'[a-z\-]*'ing\b'| wc -l[D[K[D[K[D[K[D[K[D[K[D[K[D[K
+shoving with might and main, and glowering at each other with hate. But
+snuffling, and occasionally looking back and shaking his head and
+skylarking. And he remembered that although the pump was only a hundred
+spreading cravat which was as broad and as long as a bank-note, and had
+simpering admirers, till the last girl had run their gantlet; and last
+something on the slate, hiding his work with his left hand. For a time
+shimmering veil of heat, tinted with the purple of distance; a few birds
+soothing words in his mouth, and was repulsed again. Then his pride was
+something gaudier even than this. He would be a pirate! That was it! NOW
+spring-knife and cut off the dangling end of the rope and then said:
+spreading chaos and destruction in his path. Aunt Polly entered in time
+spreading the fact that pretty soon the town would ``hear something.''
+spring of clear cold water close by, and the boys made cups of broad oak
+sprawling. Little did I know then, how soon -- Oh, if it was to do over
+struggling till the best man ducked his neighbor, and then they all went
+sputtering, laughing, and gasping for breath at one and the same time.
+spring. No, you needn't come, Huck -- we can find it.''
+stifling. They sat still, intent and waiting. The solemn hush continued.
+sighing through the branches of the forest and the boys felt a fleeting
+slanting veil of rain. Every little while some giant tree yielded the
+something to be thankful for, because the great sycamore, the shelter of
+sneaking sheepishly in the rear! They had been hid in the unused gallery
+suffering 'most a week so you boys had a good time, but it is a pity you
+spelling-book. If she had had any lingering notion of exposing Alfred
+showing on ``Examination'' day. His rod and his ferule were seldom idle
+smoking, chewing, and profanity as long as he remained a member. Now he
+something would happen that might clear away their difficulties. But
+something, they only suffered a new disappointment. It was only a stone
+sliding around in a shroud, when you ain't noticing, and peep over your
+something to carry.''
+slitting noses I judged that that was your own embellishment, because
+stunning suddenness from Huck's blanched lips. His eyes were staring
+saying commonplace things; moreover, their past history was raked up and
+weikuan@bluenose:~/csci2132/a2$ cat TomSawyer.txt |grep ^'s'[a-z\-]*'ing\b'|wc -l
+33
+weikuan@bluenose:~/csci2132/a2$ exit
+exit
+
+Script done on 2016年09月28日 星期三 15时33分07秒

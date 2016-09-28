@@ -1,0 +1,6 @@
+1).Unix file /etc/passwd contains the username of the users, their passwords, UID and GID, login name, home dicrectory
+and shell.
+
+2). PATH is for storing the list of directories of commands. System can search the PATH for commands
+
+3.) Process Controll Block

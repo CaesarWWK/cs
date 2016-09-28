@@ -1,0 +1,5 @@
+weikuan@bluenose:~/csci2132/a2$ ls /bin/*[-]*[6][4]
+/bin/bashbug-64                   /bin/gtk-query-immodules-3.0-64
+/bin/gdk-pixbuf-query-loaders-64  /bin/icu-config-64
+/bin/gio-querymodules-64          /bin/mysql_config-64
+/bin/gtk-query-immodules-2.0-64   /bin/pango-querymodules-64   

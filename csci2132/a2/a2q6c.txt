@@ -1,0 +1,7 @@
+脚本启动于 2016年09月28日 星期三 15时31分24秒
+weikuan@bluenose:~/csci2132/a2$ cat TomSawyer.txt |grep 'door'| wc -l
+51
+weikuan@bluenose:~/csci2132/a2$ exit
+exit
+
+Script done on 2016年09月28日 星期三 15时31分50秒

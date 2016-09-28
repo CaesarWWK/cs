@@ -1,0 +1,44 @@
+   weikuan@bluenose:~/csci2132/a2$ ls /bin/*[^a-zA-Z]   
+/bin/[                            /bin/linux64  
+/bin/aclocal-1.13                 /bin/m4
+/bin/automake-1.13                /bin/mysql_config-64
+/bin/base64                       /bin/octave-3.8.2
+/bin/bashbug-64                   /bin/octave-cli-3.8.2
+/bin/bunzip2                      /bin/octave-config-3.8.2
+/bin/bzip2                        /bin/pack200   
+/bin/c++                          /bin/pampop9
+/bin/[                            /bin/linux64  
+/bin/aclocal-1.13                 /bin/m4
+/bin/automake-1.13                /bin/mysql_config-64
+/bin/base64                       /bin/octave-3.8.2
+/bin/bashbug-64                   /bin/octave-cli-3.8.2
+/bin/bunzip2                      /bin/octave-config-3.8.2
+/bin/bzip2                        /bin/pack200
+/bin/c++                          /bin/pampop9
+/bin/c89                          /bin/pango-querymodules-64
+/bin/c99                          /bin/passwd.centos7
+/bin/csslint-0.6                  /bin/pbmto4425 
+/bin/db_dump185                   /bin/pbmtoescp2
+/bin/diff3                        /bin/pbmtog3
+/bin/easy_install-2.7             /bin/pbmtoln03   
+/bin/emacs-24.3                   /bin/pbmtopi3
+/bin/f95                          /bin/pbmtopsg3
+/bin/flex++                       /bin/perl5.16.3
+/bin/g++                          /bin/ping6  
+/bin/gconftool-2                  /bin/postw32/bin/gpg2                         /bin/ps2pdf12 
+/bin/gpgv2                        /bin/ps2pdf13  
+/bin/grolj4                       /bin/ps2pdf14
+/bin/grub2-mkpasswd-pbkdf2        /bin/ps2ps2      
+/bin/gsdj500                      /bin/pstree.x11
+/bin/gst-inspect-1.0              /bin/python2  
+/bin/gst-launch-1.0               /bin/python2.7 
+/bin/gst-typefind-1.0             /bin/sqlite3
+/bin/gtk-query-immodules-2.0-64   /bin/tclsh8.5
+/bin/gtk-query-immodules-3.0-64   /bin/tracepath6
+/bin/guile2                       /bin/unpack200 
+/bin/i386                         /bin/wish8.5   
+/bin/icu-config-64                /bin/x86_64
+/bin/ksh93                        /bin/x86_64-redhat-linux-c++
+/bin/linux32                      /bin/x86_64-redhat-linux-g++
+weikuan@bluenose:~/csci2132/a2$ exit
+exit
