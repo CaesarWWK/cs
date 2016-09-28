@@ -9,7 +9,7 @@ String line="";
 Board game=new Board();
 while(!line.equals("exit")){
 line = keyboard.nextLine();
-    StringTokenizer token;
+    StringTokenizer to``rken;
 token = new StringTokenizer(line, " ");
  String e = token.nextToken();
  if(e.equals("crete")){
