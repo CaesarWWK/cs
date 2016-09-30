@@ -9,7 +9,9 @@ String line="";
 Board game=new Board();
 while(!line.equals("exit")){
 line = keyboard.nextLine();
-    StringTokenizer to``rken;
+    if(line.equals("")||line.equals(" ")){System.out.print("233");}else{
+
+    StringTokenizer token;
 token = new StringTokenizer(line, " ");
  String e = token.nextToken();
  if(e.equals("crete")){
@@ -49,6 +51,7 @@ token = new StringTokenizer(line, " ");
 
 
 line="";e="";
+}
 }
 }
 }

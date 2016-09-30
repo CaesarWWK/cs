@@ -29,7 +29,7 @@ while (inputFile.hasNext())
     {
       if(a.charAt(c-i)==b.charAt(0))
       {
-        if(b.length()==1){System.out.print(c-i);}
+        if(b.length()==1){times++;}
         for(int n=b.length()-1;n>0;n--)
         {
          int count=1;
