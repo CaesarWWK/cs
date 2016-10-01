@@ -21,7 +21,7 @@ public class ex2 {
    double[][] matrix2 = new double[n][n];
    for (int i = 0; i < n; i++)
    for (int j = 0; j < n; j++)
-   matrix2[i][j] = num;
+   matrix2[i][j] = num;//crete tow matrix base on the number
 
    double[][] resultMatrix = multiplyMatrix(matrix1, matrix2);
    endTime = System.currentTimeMillis();
@@ -35,7 +35,7 @@ public class ex2 {
    for (int i = 0; i < m3.length; i++)
    for (int j = 0; j < m3.length; j++)
    m3[i][j]= m1[i][0]*m2[0][j]+m1[i][1]*m2[1][j]+m1[i][2]*m2[2][j];
-   return m3;
+   return m3;//calculate the value of the third matrix
  }
 
 

@@ -10,10 +10,10 @@ public class ex3{
     System.out.print("Enter the value of n: ");
       int y=keyboard.nextInt();
       int total=(int)Math.pow(2,y);
-       System.out.println(total);
+       System.out.println(total);//calculate the total numbers of binary numbers
    for(;total>0;total--)
     {
-      String sb = Integer.toBinaryString(total);
+      String sb = Integer.toBinaryString(total);//create the binary numbers
     }
 
     endTime = System.currentTimeMillis();
