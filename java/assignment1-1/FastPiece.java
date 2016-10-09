@@ -35,7 +35,7 @@ public class FastPiece extends Piece{
           }
           if(direction.equals("up")||direction.equals("down"))
           {
-            System.out.println("No such move")
+            System.out.println("No such move");
           }
     }
 
