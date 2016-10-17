@@ -12,6 +12,7 @@ public class PlayerRecord{
   private double PG;
   private double PCT;
 
+public PlayerRecord(){}
 public PlayerRecord(String n;String p;String t;int gp;int g;int a;int pim;int sog;int gwg)
   {
     this.name=n;
