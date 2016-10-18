@@ -1,13 +1,12 @@
 public class PrintQueue{
-   private Queue<T> queue;
-
+private Queue<Job> queue;
    public PrintQueue()
    {
-     Queue<T> queue=new Queue<T>;
+     Queue<Job> queue=new Queue<Job>();
    }
-   public void lpr(String owner,int jobId)
+   public void lpr(String owner,int JobId)
    {
-     job a=new job(owner,jobId);
+     Job a=new Job(owner,JobId);
      queue.enqueue(a);
 
    }
@@ -16,24 +15,27 @@ public class PrintQueue{
      queue.getall();
    }
 
-   public void lprm(int jobId)
+   public void lprm(int JobId)
    {
-     if(queue.first().getJobId()!=jobId)
+     if(queue.first().getJobId()!=JobId)
      {
-       while(cursor<queue.size())
+       while(queue.getcursor()<queue.size())
           {
-            if(queue.next().getJobId()==jobId)
-              queue.removeAt(cursor-1);
+            if(queue.next().getJobId()==JobId)
+              queue.removeAt(queue.getcursor()-1);
 
           }
-     }else queue.removeAt(cursor-1);
+     }else queue.removeAt(queue.getcursor()-1);
    }
 
 public void lprmAll(String owner)
 {
   for(int n=0;n<queue.size();n++)
   {
-    
+    if(queue.peek(n).getOwner().equals(owner))
+        {
+          queue.removeAt(n);
+        }
   }
 }
 

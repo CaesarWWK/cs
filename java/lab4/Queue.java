@@ -7,20 +7,24 @@ int cursor;
 int index=0;
 public Queue()
 {
-  LinkedList<T> list=new LinkedList<T>;
+  LinkedList<T> list=new LinkedList<T>();
   cursor=0;
 }
 public void enqueue(T item)
 {
-  list.addToEnd(item);
+  list.add(item);
 }
 public T dequeue()
 {
-  list.getAt(cursor);
-  list.removeAt(cursor);
+  T item=list.getAt(cursor);
+    list.removeAt(cursor);
   cursor++;
+  return item;
 }
-
+public int getcursor()
+{
+  return this.cursor;
+}
 public int size(){
  return list.size();
 }
@@ -33,10 +37,12 @@ public void clear()
 {
   list.clear();
 }
-public T peek()
+public T peek(int index)
 {
-  list.getAt(index);
-  index++;
+  T item=list.getAt(index);
+
+   index++;
+   return item;
 
 }
 public int positionOf(T item)
@@ -57,15 +63,17 @@ public T first()
 {
   if(!this.isEmpty())
   return list.getAt(cursor);
-  return null;
   cursor++;
+  return null;
+
 }
 public T next()
 {
   if(!this.isEmpty())
   return list.getAt(cursor);
-  return null;
-  cursor++;
+   cursor++;
+    return null;
+
 }
 public void getall()
 {
@@ -73,6 +81,10 @@ public void getall()
 }
 public void removeall(T item)
 {
-  list.remo
+  list.clear();
+}
+public void removeAt(int t)
+{
+  list.removeAt(t);
 }
 }

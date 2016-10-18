@@ -7,7 +7,7 @@ public class LinkedList<T>
 	//constructor
 	public LinkedList()
 	{
-		front = null;
+		front = new Node<T>();
 		count=0;
 	}
 	public Node<T> getFront()
@@ -175,7 +175,7 @@ public class LinkedList<T>
   public void addToEnd(T item)
 //adds item to the end of the linked list
   {
-    this.setAt(item,size-1);
+    this.setAt(item,0);
   }
 	//Removes all nodes containing a given item
 	//Does it in one scan (O(n))
