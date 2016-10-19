@@ -15,4 +15,8 @@ public int getJobId()
 {
 return jobId;
 }
+public String toString()
+{
+  return owner+" "+jobId;
+}
 }

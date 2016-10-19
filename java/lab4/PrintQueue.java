@@ -1,14 +1,12 @@
 public class PrintQueue{
-private Queue<Job> queue;
+private Queue<Job> queue=new Queue<Job>();
    public PrintQueue()
    {
-     Queue<Job> queue=new Queue<Job>();
-   }
+       }
    public void lpr(String owner,int JobId)
    {
      Job a=new Job(owner,JobId);
      queue.enqueue(a);
-
    }
    public void lpq()
    {
@@ -22,10 +20,10 @@ private Queue<Job> queue;
        while(queue.getcursor()<queue.size())
           {
             if(queue.next().getJobId()==JobId)
-              queue.removeAt(queue.getcursor()-1);
+              queue.removeAt(queue.getcursor());
 
           }
-     }else queue.removeAt(queue.getcursor()-1);
+     }
    }
 
 public void lprmAll(String owner)

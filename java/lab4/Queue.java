@@ -1,18 +1,22 @@
 public class Queue<T>
 {
-private LinkedList<T> list;
+private LinkedList<T> list=new LinkedList<T>();
 int cursor;
  //the cursor is mainly used for the first and the next methods.
 //continue rest of the code
 int index=0;
 public Queue()
 {
-  LinkedList<T> list=new LinkedList<T>();
+
   cursor=0;
+
+
 }
 public void enqueue(T item)
 {
-  list.add(item);
+  if(list.size()==0)
+  list.add(item);else
+  list.addToEnd(item);
 }
 public T dequeue()
 {
@@ -26,7 +30,7 @@ public int getcursor()
   return this.cursor;
 }
 public int size(){
- return list.size();
+   return list.size();
 }
 
 public boolean isEmpty()
@@ -70,8 +74,11 @@ public T first()
 public T next()
 {
   if(!this.isEmpty())
-  return list.getAt(cursor);
+  {
+   int n=cursor;
    cursor++;
+  return list.getAt(n);
+   }
     return null;
 
 }
