@@ -1,119 +1,6 @@
-/*
- * CSCI 2121 Lab 1: Bit Slinging
- *
- * lab1.c - Source file with your solutions to the Lab.
- *          This is the file you will hand in to your instructor.
- *
- * WARNING: You can still use printf for debugging without including
- * <stdio.h>, although you might get a compiler warning. In general,
- * it's not good practice to ignore compiler warnings, but in this
- * case it's OK.
- */
-
-#include "testFramework.h"
-#include <limits.h>
-
-#if 0
-
-You will provide your solution to the Lab by
-editing the collection of functions in this source file.
-
-CODING RULES:
-
-  Replace the "return" statement in each function with one
-  or more lines of C code that implements the function. Your code
-  must conform to the following style:
-
-  int Funct(arg1, arg2, ...) {
-      /* brief description of how your implementation works */
-      int var1 = Expr1;
-      ...
-      int varM = ExprM;
-
-      varJ = ExprJ;
-      ...
-      varN = ExprN;
-      return ExprR;
-  }
-
-  And yes, the comment for each funtion is a good idea,
-  as we will check it to give marks to not working functions.
-
-  Each "Expr" is an expression using ONLY the following:
-  1. Integer constants 0 through 255 (0xFF), inclusive. You are
-      not allowed to use big constants such as 0xffffffff.
-  2. Function arguments and local variables (no global variables).
-  3. Unary integer operations ! ~
-  4. Binary integer operations & ^ | + << >>
-
-  Some of the problems restrict the set of allowed operators even further.
-  Each "Expr" may consist of multiple operators. You are not restricted to
-  one operator per line.
-
-  You are expressly forbidden to:
-  1. Use any control constructs such as if, do, while, for, switch, etc.
-  2. Define or use any macros.
-  3. Define any additional functions in this file.
-  4. Call any functions.
-  5. Use any other operations, such as &&, ||, -, or ?:
-  6. Use any form of casting. This means you are not allowed to use
-     unsigned since you will need to do implicit casting at some point.
-
-  You may assume that your machine:
-  1. Uses 2s complement, 32-bit representations of integers.
-  2. Performs right shifts arithmetically.
-  3. Has unpredictable behavior when shifting an integer by more
-     than the word size.
-
-EXAMPLES OF ACCEPTABLE CODING STYLE:
-  /*
-   * pow2plus1 - returns 2^x + 1, where 0 <= x <= 31
-   */
-  int pow2plus1(int x) {
-     /* exploit ability of shifts to compute powers of 2 */
-     return (1 << x) + 1;
-  }
-
-  /*
-   * pow2plus4 - returns 2^x + 4, where 0 <= x <= 31
-   */
-  int pow2plus4(int x) {
-     /* exploit ability of shifts to compute powers of 2 */
-     int result = (1 << x);
-     result += 4;
-     return result;
-  }
-
-
-NOTE:
-  Use the test harness to check your functions for correctness.
-#endif
-
-/*
- * Modify the following functions according the coding rules.
- *
- *   IMPORTANT. TO AVOID GRADING SURPRISES:
- *   1. Make sure to use the labCheck program (Done automatical when using make)
- *      to check for following the rules.
- *   2. Use the testFramework to check that your solutions produce
- *      the correct answers. Watch out for corner cases around min and max.
- *   3. Write comments at the begining of each function.  If someting goes wrong,
- *      but you explain what the function should be doing, it will be considered
- *      when grading.
- *   4. All files other then lab1.c will be as they were when they were given to you.
- *      Any changes will not work when grading.
- *   5. Don't cheat by finding a bug in our testing.  You will probably get caught, and
- *      it won't be fun.
- *   6. If you find any bugs, please let us know.
- */
-/*
- * bitAnd - x&y using only ~ and |
- *   Example: bitAnd(6, 5) = 4
- *   Legal ops: ~ |
- */
+/* if both bit of the parameter is 1, the result will be 1, otherwise 0*/
 int bitAnd(int x, int y) {
-  return 2;
-}
+   return 4,294,967,295-(~x^y)^(x^~y);}
 
 
 /*
@@ -121,7 +8,7 @@ int bitAnd(int x, int y) {
  *   Legal ops: ! ~ & ^ | + << >>
  */
 int minusOne(void) {
-  return 2;
+  return -1;
 }
 
 
@@ -130,7 +17,7 @@ int minusOne(void) {
  *   Legal ops: ! ~ & ^ | + << >>
  */
 int tmax(void) {
-  return 2;
+  return 2,147,483,646;
 }
 
 
@@ -140,7 +27,8 @@ int tmax(void) {
  *   Legal ops: ! ~ & ^ | + << >>
  */
 int copyLSB(int x) {
-  return 2;
+    
+    return (x<<32)>>32;
 }
 
 
@@ -149,7 +37,7 @@ int copyLSB(int x) {
  *   Legal ops: ! ~ & ^ | + << >>
  */
 int evenBits(int x) {
-  return 2;
+  return x&0;
 }
 
 
@@ -159,7 +47,16 @@ int evenBits(int x) {
  *   Legal ops: ! ~ & ^ | + << >>
  */
 int isEqual(int x, int y) {
-  return 2;
+    int result1=(((x^y)>>7)&1);
+    int result2=(((x^y)<<1)>>6)&1;
+    int result3=(((x^y)<<2)>>5)&1;
+    int result4=(((x^y)<<3)>>4)&1;
+    int result5=(((x^y)<<4)>>3)&1;
+    int result6=(((x^y)<<5)>>2)&1;
+    int result7=(((x^y)<<6)>>1)&1;
+    int result8=((x^y)<<7)&1;
+    int result=((((((result1^result2)^result3)^result4)^result5)^result6)^result7)^result8;
+    return result;
 }
 
 
@@ -169,7 +66,7 @@ int isEqual(int x, int y) {
  *   Legal ops: ! ~ & ^ | + << >>
  */
 int negate(int x) {
-  return 2;
+  return (~x)+1;
 }
 
 
@@ -182,7 +79,10 @@ int negate(int x) {
  *   Legal ops: ! ~ & ^ | + << >>
  */
 int bitMask(int highbit, int lowbit) {
-  return 2;
+    int result=0;
+    result=(result&1)>>lowbit;
+    result=result<<(highbit-lowbit);
+    return result;
 }
 
 
@@ -193,7 +93,8 @@ int bitMask(int highbit, int lowbit) {
  *   Legal ops: ! ~ & ^ | + << >>
  */
 int conditional(int x, int y, int z) {
-  return 2;
+   int result=((x&0)&z)+((x|0)&y);
+    return result;
 }
 
 
@@ -203,7 +104,7 @@ int conditional(int x, int y, int z) {
  *   Legal ops: ! ~ & ^ | + << >>
  */
 int isPositive(int x) {
-  return 2;
+  return (x >> 31)|(~((~x + 1) >> 31) + 1);
 }
 
 
@@ -213,7 +114,20 @@ int isPositive(int x) {
  *   Legal ops: ! ~ & ^ | + << >>
  */
 int reverseBytes(int x) {
-  return 2;
+    x = (x & 0x55555555) <<  1 | (x & 0xAAAAAAAA) >>  1;
+    
+  x = (x & 0x33333333) <<  2 | (x & 0xCCCCCCCC) >>  2;
+    
+    x = (x & 0x0F0F0F0F) <<  4 | (x & 0xF0F0F0F0) >>  4;
+    
+    x = (x & 0x00FF00FF) <<  8 | (x & 0xFF00FF00) >>  8;
+    
+    x = (x & 0x0000FFFF) << 16 | (x & 0xFFFF0000) >> 16;
+    
+    
+    
+    return x;
+
 }
 
 
@@ -224,5 +138,6 @@ int reverseBytes(int x) {
  *   Legal ops: ! ~ & ^ | + << >>
  */
 int isPower2(int x) {
-  return 2;
+  return x&(x-15);
 }
+
