@@ -1,0 +1,51 @@
+CSCI 2121 Lab 1: Bit Slinging
+Directions to Students
+
+Your goal is to modify your copy of lab1.c so that it passes all the
+tests in the compiled lab1 binary  without violating any of the coding guidelines.
+
+***********************************************************
+1. Modifying lab1.c
+***********************************************************
+
+Carefully read the instructions in the lab1.c file before you
+start. These give the coding rules that you will need to follow if you
+want full credit.
+
+*************************************
+2. Testing for correctness
+*************************************
+
+The Makefile in this directory compiles your version of lab1.c with
+additional code to create a program (or test harness) named conviniently lab1.
+
+Give the command:
+
+	unix> make
+
+to compile the code.
+
+Run the program with the command:
+
+	unix> ./lab1 [optional command line arguments]
+
+When moving from one platform to another, you want to get rid of the
+old version of the compiled lab1 and generate a new one.  Use the commands:
+
+	unix> make clean
+	unix> make
+
+*******************
+3. What the compiled program does
+*******************
+
+running your compiled lab1.c using ./lab1 tests your procedures for correctness by running a number of test
+cases.  It does not guarantee exhaustive evaluation.  In addition, it does
+not check your code for compliance with the coding guidelines.  The makefile does that.
+
+If you think the tests are wrong send mail
+to the lead person for this assignment.
+
+Here are the command line options for the compiled lab1:
+   -f Name  Check only the named function
+   -h       Print the list of options

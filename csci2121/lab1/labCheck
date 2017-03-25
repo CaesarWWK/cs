@@ -1,0 +1,227 @@
+#!/bin/perl
+
+# Hello.
+# If you are reading this then you must either be a student wondering what was in this file,
+# or you are trying to extend this or fix some problem that exists in this file.
+# Or me, I guess.
+# Please ignore the terrible state of this file.  I just kind of threw it together, and it works,
+# Or as far as I know.  Anyway, do not take this as a standered to make Perl files.  
+# I hope I may be able to provide some insight into this chaos.
+#
+# Raphael B.N.
+
+use strict;
+use warnings;
+
+if($#ARGV < 0){
+  die "Please give me a file to check for example: labCheck file.c\n";
+}
+
+my $fileName = $ARGV[0];
+my $file;
+
+open($file, "<", $fileName) or die "$fileName is not a file I can open\n";
+
+# Passed 1 argument, a line of a C file, Returns that line without single line comments.
+sub removeOneLineComments{
+  my $line = shift;
+  if($line =~ /(.*?)\/\/.*/){ # Matches // comments. Could be improved. Uses not geedy search for //
+    $line = "$1\n"; # Returned line is matched section before matched section.
+  } # Fun fact, A // in a string will not count as the start of a comment, not sure how to fix this.  
+  # Simple fix, add " to each function check.  
+
+  $line =~ s/\/\*.*?\*\///g; # Gets rid of single line /* */ comments. Search and replace and put the result in $line. Nice one perl.
+
+  return $line;
+}
+# functions will be a hashmap of all functions found in the program.
+my %functions;
+# are we in a /* */ multiline comment?
+my $inComment = 0;
+# are we in a #if 0 section?
+my $inMegaComment = 0;
+# are we in a function
+my $inFunction = 0;
+# This should NEVER be above 1 for lab1.  Number of { without } we have seen.
+my $bracketDepth = 0;
+# I don't think there is any nead for any globals, but if there is, then this will help count them.
+my $globals = 0;
+
+# Passed 1 argument.  Updates depth, and gives an error if things are too deep.
+# 2 values are returned, the first is the depth change over the entire line, and the second is if there was any change.
+# Those might sound like the same thing, but they are not, as {something} would be 0, true.
+sub depthChange{
+  my $line = shift;
+  my $goUp = () = $line =~ /\{/g;
+  my $goDown = () = $line =~ /\}/g;
+
+  # For lab, depth should never be higher then 1.
+  # While people can use them in c to organise work, I put this as a net of extra safty.
+  die "It look's like you tried to use {} brackets inside a function.  Please do not use them for this lab.\n" if $goUp + $bracketDepth > 1;
+
+  return ($goUp - $goDown), ($goUp or $goDown);
+}
+
+# First file pass, line by line.
+while(my $line = <$file>){
+  # Remove Comments
+  # If already removing comments, will still consider last part of the ending line.
+  # First things first, skip any lines inside a mega comment.  
+  if($inMegaComment)
+  {
+    $inMegaComment = 0 if($line =~ /^#endif/);
+    next;
+  }
+  $inMegaComment = 1 if($line =~ /^#if 0/); # enter mega comment here.
+
+  # If there is any define statments, things get way harder to fix, so if there are any, die here.
+  die "#define should not be used in this file." if $line =~ /^.*#[dD]/;
+  
+  # get out of multiline comment logic.
+  if($inComment){
+    if($line =~ /\*\/(.*?)/){
+      $line = "$1";
+      $inComment = 0;
+    }
+    else{
+      next;
+    }
+  }
+
+  # Removing one line and starting comments.
+  $line = removeOneLineComments($line);
+  # Line ending with /* comments, cut off the end and process the rest of the line.
+  if($line =~ /(.*?)\/\*/){
+    $line = "$1\n";
+    $inComment = 1;
+  }
+
+  # Hunt for Globals
+  if((not $inFunction) and $line =~ /^[^\{]*=/)
+  {
+    $globals += 1;
+    die "A global was found.  Please remove it.  Line where it was found is $line." if $globals > 0;
+  }
+
+  # Finding the start of a function.  How it works, well, um, I kind of forget.
+  if( (not $inFunction) and $line =~ /(\w+)\s+(\w+)\s*\([^)]*\)(.*)/){
+    $inFunction = $2;
+    # Starting the functions body.  
+    # Infact, if the entire function is on this one line, it will still catch it.
+    $functions{$inFunction} = $3;
+
+    my @result = depthChange($3);
+
+    # If something goes wrong, and this is less then 0, well then it might be a good indicator that something iffy is going on.
+    $bracketDepth += $result[0];
+    $bracketDepth >= 0 or die "Something went wrong, are you sure this is a valid C file? Check your brackets.\n";
+    # If the entire function is on one line, then exit out of the function.
+    if($result[1] and (not $bracketDepth) ){
+      $inFunction = 0;
+      # An edge case where after the function, there is a global.
+      if((not $inFunction) and $line =~ /=[^\}]*$/)
+      {
+        $globals += 1;
+        die "A global was found.  Please remove it. Line where it was found is $line." if $globals > 0;
+      }
+    }
+  }
+  # Internal function protocal.  This is what happens in a regular line of a function.
+  elsif($inFunction){
+    $functions{$inFunction} = "$functions{$inFunction} $line";
+
+    my @result = depthChange($line);
+    $bracketDepth += $result[0];
+    $bracketDepth >= 0 or die "Something went wrong, are you sure this is a valid C file? Check your brackets.\n";
+
+    if( not $bracketDepth ){
+      $inFunction = 0;
+      # Hunt for Globals at the end of a function.
+      if((not $inFunction) and $line =~ /=[^\}]*$/)
+      {
+        $globals += 1;
+        die "A global was found.  Please remove it. Line where it was found is $line." if $globals > 0;
+      }
+    }
+  }
+}
+
+close($file);
+
+# Runs inter function checks to make sure things like if statments and loops  are not used.
+# Passed a variable amount of arguments.  First is the function name.  The rest are a list of extra checks to preform on the function.
+sub checkFunction{
+  my $functionName = shift;
+  my @extraChecks = @_;
+  my $errorFound = 0;
+
+  # Function must exist.
+  if(not exists $functions{$functionName})
+  {
+    print "Function $functionName not found.\n";
+    return 1;
+  }
+  #by defalut the only checks that are done are for function like things, if, loops, ect..
+
+  # Checks via word character, x amount of spaces, foloowed by brackets.  That look's like a function to me, there should be none in the function so this works.
+  # Also checks for most casts.
+  # And because it is possible to do, you can put brackets after the return statment, it won't be counted as a function.
+  if($functions{$functionName} =~ /(\w+\s*\()|\(\s*(unsigned.*|int|char|long.*|short.*|double|float)\s*\)/ && $1 !~ /^return\s*\(/)
+  {     
+    print "if statments, loops, function calls and casts are not allowed for this lab. Found one in $functionName.\n";
+    $errorFound = 1;
+  }
+
+  # Checks all numerical values to see if they are less then 1 byte.
+  while ($functions{$functionName} =~ /(0[xXbB][0-9a-fA-F]+|\d+)/g) {
+    my $match = $1;
+    my $value = $1;
+    if($match =~ /^0[xX]/){ #Convert from hex, not auto in strings.
+      $value = hex $value;
+    }
+    elsif($match =~ /^0/){ #Convert from oct, not auto in strings.
+      $value = oct $value;
+    }
+    
+    if($value > 0xff){
+      print "Value $match used in $functionName is larger then a byte. Not allowed.\n";
+      $errorFound = 1;
+    }
+  }
+
+  # Because it cannot be done below, checks for < and > that are not part of << and >>
+  if($functions{$functionName} =~ /(?<!<)<(?!<)|(?<!>)>(?!>)/){
+      print "< or > are logical operators, and are not to be used in this lab.  Found one in $functionName.\n";
+      print "Perhapse you meant to use shifts which are << and >>.\n";
+      $errorFound = 1;
+  }
+  
+  # These are extra symbols.  Put here anything that should not be used.
+  foreach my $symbol (@extraChecks){
+    if($functions{$functionName} =~ /\Q$symbol\E/){
+      print "$symbol is not allowed in $functionName.\n";
+      $errorFound = 1;
+    }
+  }
+  # If there was any errors, a 1 is returned.
+  return $errorFound;
+}
+
+my $rCode = 0;
+# A check of all functions, if each passes, then the program can go on to be tested.
+# A full list is recomened here, as there are lots of strings that are not coverd by normal rules.
+# Most of the operators that are availible in fact should not be used.  
+$rCode |= checkFunction("bitAnd", '&&', '||', ':', '?', '%', '==', '-', '*', '/', '<=', '>=', '!=', '"', '!', '&', '^', '+', '<<', '>>');
+$rCode |= checkFunction("minusOne", '&&', '||', ':', '?', '%', '==', '-', '*', '/', '<=', '>=', '!=', '"');
+$rCode |= checkFunction("tmax", '&&', '||', ':', '?', '%', '==', '-', '*', '/', '<=', '>=', '!=', '"');
+$rCode |= checkFunction("copyLSB", '&&', '||', ':', '?', '%', '==', '-', '*', '/', '<=', '>=', '!=', '"');
+$rCode |= checkFunction("evenBits", '&&', '||', ':', '?', '%', '==', '-', '*', '/', '<=', '>=', '!=', '"');
+$rCode |= checkFunction("isEqual", '&&', '||', ':', '?', '%', '==', '-', '*', '/', '<=', '>=', '!=', '"');
+$rCode |= checkFunction("negate", '&&', '||', ':', '?', '%', '==', '-', '*', '/', '<=', '>=', '!=', '"');
+$rCode |= checkFunction("bitMask", '&&', '||', ':', '?', '%', '==', '-', '*', '/', '<=', '>=', '!=', '"');
+$rCode |= checkFunction("conditional", '&&', '||', ':', '?', '%', '==', '-', '*', '/', '<=', '>=', '!=', '"');
+$rCode |= checkFunction("isPositive", '&&', '||', ':', '?', '%', '==', '-', '*', '/', '<=', '>=', '!=', '"');
+$rCode |= checkFunction("reverseBytes", '&&', '||', ':', '?', '%', '==', '-', '*', '/', '<=', '>=', '!=', '"');
+$rCode |= checkFunction("isPower2", '&&', '||', ':', '?', '%', '==', '-', '*', '/', '<=', '>=', '!=', '"');
+
+exit($rCode);
