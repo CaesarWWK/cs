@@ -2,9 +2,9 @@ public class NHLStats
 {
 private List<PlayerRecord> playerlist;
 
-private NHLStats()
+public NHLStats()
 {
-   List<PlayerRecord> playerlist=new List<PlayerRecord>();
+  playerlist=new List<PlayerRecord>();
 }
 public void add(PlayerRecord n)
 {
@@ -25,25 +25,36 @@ public PlayerRecord next()
   return playerlist.next();
 
 }
-public PlayerRecord enumerate()
+public void enumerate()
 {
-  return playerlist.enumerate();
+  playerlist.enumerate();
 }
 public void highestS()
 {
-  int max=playerlist.first.getP();
-  String maxc=playerlist.first.getname();
+  PlayerRecord maxplayer=new PlayerRecord();
+  maxplayer=playerlist.first();
   LinkedList<String> maxn=new LinkedList<String>();
-  for(buweikong)
+  while(playerlist.getcursor()<playerlist.size())
   {
-      PlayerRecord n=new PlayerRecord(playerlist.next());
-      if(n.getP()>max)
+      PlayerRecord n=new PlayerRecord();
+     n=playerlist.next();
+      if(n.getP()>maxplayer.getP())
       {
-        max=n.getP();
-        maxc=n.getname();
+        maxplayer=n;
+      }
+     
+  }
+  maxn.add(maxplayer.getname());
+  for(int n=0;n<playerlist.size();n++)
+  {
+      PlayerRecord a2=new PlayerRecord();
+      a2=playerlist.next();
+      if(a2.getP()==maxplayer.getP())
+      {
+        maxn.add(a2.getname());
       }
   }
-  for
+   maxn.enumerate();
 
 }
 

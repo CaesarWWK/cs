@@ -77,6 +77,10 @@ else{
   }
 }
 list3.enumerate();
-
+}
+public static <T extends Comparable<T>> OrderedList<T> merge (OrderedList<T> list1,
+OrderedList<T> list2)
+{
+//your code here
 }
 }

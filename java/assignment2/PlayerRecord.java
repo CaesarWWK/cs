@@ -13,7 +13,7 @@ public class PlayerRecord{
   private double PCT;
 
 public PlayerRecord(){}
-public PlayerRecord(String n;String p;String t;int gp;int g;int a;int pim;int sog;int gwg)
+public PlayerRecord(String n,String p,String t,int gp,int g,int a,int pim,int sog,int gwg)
   {
     this.name=n;
     this.position=p;
@@ -45,7 +45,7 @@ public PlayerRecord(String n;String p;String t;int gp;int g;int a;int pim;int so
   {
     return this.g;
   }
-  public String geta()
+  public int geta()
   {
     return this.a;
   }
