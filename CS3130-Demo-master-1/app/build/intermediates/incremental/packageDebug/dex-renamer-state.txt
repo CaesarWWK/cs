@@ -1,0 +1,7 @@
+#Mon May 08 19:35:37 ADT 2017
+base.0=/Users/wangweikuan/csj/CS3130-Demo-master-1/app/build/intermediates/transforms/dex/debug/folders/1000/10000/instant-run_edb7718d60f36d9d7ee1c9f54dc873b5023762f8
+renamed.1=classes.dex
+renamed.0=classes2.dex
+file.1=/Users/wangweikuan/csj/CS3130-Demo-master-1/app/build/intermediates/transforms/dex/debug/folders/1000/10000/instant-run-bootstrap_af4cb09799a5f872da2d817d1c1d41fbe5425d5f/classes.dex
+base.1=/Users/wangweikuan/csj/CS3130-Demo-master-1/app/build/intermediates/transforms/dex/debug/folders/1000/10000/instant-run-bootstrap_af4cb09799a5f872da2d817d1c1d41fbe5425d5f
+file.0=/Users/wangweikuan/csj/CS3130-Demo-master-1/app/build/intermediates/transforms/dex/debug/folders/1000/10000/instant-run_edb7718d60f36d9d7ee1c9f54dc873b5023762f8/classes.dex

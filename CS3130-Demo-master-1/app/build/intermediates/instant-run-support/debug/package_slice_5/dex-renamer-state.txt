@@ -1,0 +1,4 @@
+#Mon May 08 19:10:58 ADT 2017
+base.0=/Users/wangweikuan/csj/CS3130-Demo-master-1/app/build/intermediates/transforms/dex/debug/folders/1000/5/slice_5
+renamed.0=classes.dex
+file.0=/Users/wangweikuan/csj/CS3130-Demo-master-1/app/build/intermediates/transforms/dex/debug/folders/1000/5/slice_5/classes.dex

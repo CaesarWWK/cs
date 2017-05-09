@@ -1,0 +1,10 @@
+[
+    {
+        "merged": "/Users/wangweikuan/csj/CS3130-Demo-master-1/app/build/intermediates/res/merged/debug/mipmap-xhdpi/ic_launcher.png",
+        "source": "/Users/wangweikuan/csj/CS3130-Demo-master-1/app/src/main/res/mipmap-xhdpi/ic_launcher.png"
+    },
+    {
+        "merged": "/Users/wangweikuan/csj/CS3130-Demo-master-1/app/build/intermediates/res/merged/debug/mipmap-xhdpi/ic_launcher_round.png",
+        "source": "/Users/wangweikuan/csj/CS3130-Demo-master-1/app/src/main/res/mipmap-xhdpi/ic_launcher_round.png"
+    }
+]

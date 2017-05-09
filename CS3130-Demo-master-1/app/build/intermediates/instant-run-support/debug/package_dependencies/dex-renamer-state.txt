@@ -1,0 +1,7 @@
+#Mon May 08 18:30:13 ADT 2017
+base.0=/Users/wangweikuan/csj/CS3130-Demo-master-1/app/build/intermediates/transforms/dex/debug/folders/1000/10/classes_130bbb37863de81d99a48dde787c47426eebee23
+renamed.1=classes2.dex
+renamed.0=classes.dex
+file.1=/Users/wangweikuan/csj/CS3130-Demo-master-1/app/build/intermediates/transforms/dex/debug/folders/1000/10/constraint-layout-solver-1.0.2_9a30dffd9e23f8b1f43372ca62ae3d05ef2b148f/classes.dex
+base.1=/Users/wangweikuan/csj/CS3130-Demo-master-1/app/build/intermediates/transforms/dex/debug/folders/1000/10/constraint-layout-solver-1.0.2_9a30dffd9e23f8b1f43372ca62ae3d05ef2b148f
+file.0=/Users/wangweikuan/csj/CS3130-Demo-master-1/app/build/intermediates/transforms/dex/debug/folders/1000/10/classes_130bbb37863de81d99a48dde787c47426eebee23/classes.dex

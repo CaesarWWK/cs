@@ -1,0 +1,2 @@
+<?xml version="1.0" encoding="utf-8"?>
+<merger version="3"><dataSet config="output"><source path="/Users/wangweikuan/.android/build-cache/977aa5d8817000731a7b40a455cd5bfc7dac71d9/output/assets"/></dataSet><dataSet config="main"><source path="/Users/wangweikuan/csj/CS3130-Demo-master-1/app/src/main/assets"/><source path="/Users/wangweikuan/csj/CS3130-Demo-master-1/app/build/generated/assets/shaders/debug"/></dataSet><dataSet config="debug"><source path="/Users/wangweikuan/csj/CS3130-Demo-master-1/app/src/debug/assets"/></dataSet></merger>
